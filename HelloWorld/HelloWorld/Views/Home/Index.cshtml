@@ -1,0 +1,20 @@
+﻿
+@{
+    Layout = null;
+    @model  HelloWorld.ViewModels.GreetingViewModel
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Index</title>
+</head>
+<body>
+    <h1>Hello @Model.UserFirstName   @Model.UserLastName </h1>
+    <H3>@Model.Greeting</H3>
+    <div>It is @Model.CurrentDate.ToLocalTime() It's time to think about Dinner</div>
+    <div> 
+    </div>
+</body>
+</html>
