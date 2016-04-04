@@ -13,7 +13,6 @@ namespace CodeFirstSample.Controllers
 {
     public class CustomerController : Controller
     {
-        
 
         [HttpGet]
         public ActionResult Index()
