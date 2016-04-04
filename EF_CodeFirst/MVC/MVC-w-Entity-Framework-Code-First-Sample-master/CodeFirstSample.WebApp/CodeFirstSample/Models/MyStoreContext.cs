@@ -10,6 +10,7 @@ namespace CodeFirstSample.Models
     {
         public DbSet<Customer> Customer { get; set; }
 
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Customer>()
