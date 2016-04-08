@@ -39,7 +39,7 @@ namespace InterfaceExample
                 SpeciesName = "Canis lupus"
             };
 
-            //display wolf info
+            //display wolf information
             Console.Write("WOLF INFORMATION" + "\n");
             var wolfCountry = "United States, Canada";
             var wolfPopulation = wolf.GetPopulationBasedOnCountry(wolfCountry);
