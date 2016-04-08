@@ -58,8 +58,11 @@ namespace InterfaceExample
             Console.Write("Habitat for dogs is " + dogHabitat + " in " + dogCountry + "\n");
             Console.Write("The scientific name for a dog is " + dog.SpeciesName + "\n");
             Console.Write("Dogs like to eat " + dog.Diet);
-           
+            
+            Console.ReadLine();
           
+
+
         }
     }
 }

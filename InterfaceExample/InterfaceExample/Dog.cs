@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,7 @@ namespace InterfaceExample
         {
             if (country == "United States" || country == "Canada")
             {
+                Debug.WriteLine(country);
                 return "mainly in households though there feral dog populations North America";
             }
 
@@ -34,16 +36,13 @@ namespace InterfaceExample
             {
                 case "Australia":
                     return 2323234;
-                    break;
                 case "United States":
                     return 6663234;
-                    break;
                 case "Canada":
                     return 6663234;
-                    break;
                 default:
                     return null;
-                    break;
+
             }
 
         }

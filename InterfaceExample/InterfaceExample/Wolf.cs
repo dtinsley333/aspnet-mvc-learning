@@ -34,16 +34,13 @@ namespace InterfaceExample
             {
                 case "Australia":
                     return 0;
-                    break;
-                case "United States":
+                case "United States, Canada":
                     return 6663234;
-                    break;
                 case "Canada":
                     return 6663234;
-                    break;
                 default:
                     return null;
-                    break;
+
             }
 
         }
