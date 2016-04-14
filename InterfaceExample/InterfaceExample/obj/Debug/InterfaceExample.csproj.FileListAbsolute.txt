@@ -1,0 +1,5 @@
+C:\CodeProjects\MVC_Learning\InterfaceExample\InterfaceExample\bin\Debug\InterfaceExample.exe.config
+C:\CodeProjects\MVC_Learning\InterfaceExample\InterfaceExample\bin\Debug\InterfaceExample.exe
+C:\CodeProjects\MVC_Learning\InterfaceExample\InterfaceExample\bin\Debug\InterfaceExample.pdb
+C:\CodeProjects\MVC_Learning\InterfaceExample\InterfaceExample\obj\Debug\InterfaceExample.exe
+C:\CodeProjects\MVC_Learning\InterfaceExample\InterfaceExample\obj\Debug\InterfaceExample.pdb

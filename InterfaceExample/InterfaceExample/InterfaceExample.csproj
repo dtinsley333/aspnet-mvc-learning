@@ -43,11 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dog.cs" />
+    <Compile Include="Canines\Dog.cs" />
     <Compile Include="ICanine.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Wolf.cs" />
+    <Compile Include="Canines\Wolf.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
