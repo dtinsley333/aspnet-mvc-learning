@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InterfaceExample.Canines
 {
-    class Wolf : ICanine
+   public class Wolf : ICanine
     {
         public int AverageLifeSpan { get; set; }
         public int AverageWeight { get; set; }
