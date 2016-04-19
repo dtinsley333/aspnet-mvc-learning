@@ -4,23 +4,17 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 
-namespace BasicEntityFrameworkDataAccess.Models
+namespace DataAccessWithEntityFramework.Models
 {
-    public class MyStoreContext: DbContext
+    public class MyStoreContext : DbContext
     {
-    
-        public DbSet<Employee> Employee { get; set; }
-        public DbSet<>
+        public DbSet<Customer> Customer { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Customer>()
                 .ToTable("Customer")
                 .HasKey(c => c.CustomerId);
-
-            modelBuilder.Entity<Employee>()
-                .ToTable("Employee")
-                .HasKey(c => c.EmployeeId);
         }
 
 
