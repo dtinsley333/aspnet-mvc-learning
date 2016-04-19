@@ -3,3 +3,6 @@ C:\CodeProjects\MVC_Learning\InterfaceExample\InterfaceExample\bin\Debug\Interfa
 C:\CodeProjects\MVC_Learning\InterfaceExample\InterfaceExample\bin\Debug\InterfaceExample.pdb
 C:\CodeProjects\MVC_Learning\InterfaceExample\InterfaceExample\obj\Debug\InterfaceExample.exe
 C:\CodeProjects\MVC_Learning\InterfaceExample\InterfaceExample\obj\Debug\InterfaceExample.pdb
+C:\CodeProjects\MVCLearningV2\InterfaceExample\InterfaceExample\bin\Debug\InterfaceExample.exe.config
+C:\CodeProjects\MVCLearningV2\InterfaceExample\InterfaceExample\obj\Debug\InterfaceExample.exe
+C:\CodeProjects\MVCLearningV2\InterfaceExample\InterfaceExample\obj\Debug\InterfaceExample.pdb
