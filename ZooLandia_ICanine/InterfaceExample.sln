@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfaceExample", "InterfaceExample\InterfaceExample.csproj", "{1223A2A5-9F37-4344-9BE4-E7691862BB31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CanineTester", "CanineTester\CanineTester.csproj", "{D59500ED-49B1-4B27-9A2B-D2221217CBB9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1223A2A5-9F37-4344-9BE4-E7691862BB31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1223A2A5-9F37-4344-9BE4-E7691862BB31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1223A2A5-9F37-4344-9BE4-E7691862BB31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1223A2A5-9F37-4344-9BE4-E7691862BB31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D59500ED-49B1-4B27-9A2B-D2221217CBB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D59500ED-49B1-4B27-9A2B-D2221217CBB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D59500ED-49B1-4B27-9A2B-D2221217CBB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D59500ED-49B1-4B27-9A2B-D2221217CBB9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
