@@ -8,13 +8,18 @@ namespace MyDatabase.Models
 {
     public class MyStoreContext: DbContext
     {
-        public DbSet<Customer> Customer { get; set; }
+        public DbSet<Employee> Employee { get; set; }
+        public DbSet<Department> Department { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Customer>()
-                .ToTable("Customer")
-                .HasKey(c => c.CustomerId);
+            modelBuilder.Entity<Employee>()
+                .ToTable("Employee")
+                .HasKey(e => e.EmployeeId);
+
+            modelBuilder.Entity<Department>()
+              .ToTable("Department")
+              .HasKey(d => d.DepartmentId);
         }
 
 
