@@ -1,0 +1,8 @@
+C:\CodeProjects\NSSCode\ZooLandia_ICanine\CanineTester\bin\Debug\CanineTester.dll
+C:\CodeProjects\NSSCode\ZooLandia_ICanine\CanineTester\bin\Debug\CanineTester.pdb
+C:\CodeProjects\NSSCode\ZooLandia_ICanine\CanineTester\bin\Debug\InterfaceExample.exe
+C:\CodeProjects\NSSCode\ZooLandia_ICanine\CanineTester\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\CodeProjects\NSSCode\ZooLandia_ICanine\CanineTester\bin\Debug\InterfaceExample.pdb
+C:\CodeProjects\NSSCode\ZooLandia_ICanine\CanineTester\obj\Debug\CanineTester.csprojResolveAssemblyReference.cache
+C:\CodeProjects\NSSCode\ZooLandia_ICanine\CanineTester\obj\Debug\CanineTester.dll
+C:\CodeProjects\NSSCode\ZooLandia_ICanine\CanineTester\obj\Debug\CanineTester.pdb

@@ -1,0 +1,17 @@
+C:\CodeProjects\MVC_Learning\InterfaceExample\InterfaceExample\bin\Debug\InterfaceExample.exe.config
+C:\CodeProjects\MVC_Learning\InterfaceExample\InterfaceExample\bin\Debug\InterfaceExample.exe
+C:\CodeProjects\MVC_Learning\InterfaceExample\InterfaceExample\bin\Debug\InterfaceExample.pdb
+C:\CodeProjects\MVC_Learning\InterfaceExample\InterfaceExample\obj\Debug\InterfaceExample.exe
+C:\CodeProjects\MVC_Learning\InterfaceExample\InterfaceExample\obj\Debug\InterfaceExample.pdb
+C:\CodeProjects\NSSCode\InterfaceExample\InterfaceExample\bin\Debug\InterfaceExample.exe.config
+C:\CodeProjects\NSSCode\InterfaceExample\InterfaceExample\obj\Debug\InterfaceExample.exe
+C:\CodeProjects\NSSCode\InterfaceExample\InterfaceExample\obj\Debug\InterfaceExample.pdb
+C:\CodeProjects\NSSCode\InterfaceExample\InterfaceExample\bin\Debug\InterfaceExample.exe
+C:\CodeProjects\NSSCode\InterfaceExample\InterfaceExample\bin\Debug\InterfaceExample.pdb
+C:\CodeProjects\NSSCode\InterfaceExample\InterfaceExample\obj\Debug\InterfaceExample.csprojResolveAssemblyReference.cache
+C:\CodeProjects\NSSCode\ZooLandia_ICanine\InterfaceExample\bin\Debug\InterfaceExample.exe.config
+C:\CodeProjects\NSSCode\ZooLandia_ICanine\InterfaceExample\obj\Debug\InterfaceExample.exe
+C:\CodeProjects\NSSCode\ZooLandia_ICanine\InterfaceExample\obj\Debug\InterfaceExample.pdb
+C:\CodeProjects\NSSCode\ZooLandia_ICanine\InterfaceExample\bin\Debug\InterfaceExample.exe
+C:\CodeProjects\NSSCode\ZooLandia_ICanine\InterfaceExample\bin\Debug\InterfaceExample.pdb
+C:\CodeProjects\NSSCode\ZooLandia_ICanine\InterfaceExample\obj\Debug\InterfaceExample.csprojResolveAssemblyReference.cache
