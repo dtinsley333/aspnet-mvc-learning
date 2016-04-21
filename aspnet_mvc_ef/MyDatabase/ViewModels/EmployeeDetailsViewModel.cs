@@ -15,7 +15,7 @@ namespace MyDatabase.ViewModels
         public string City { get; set; }
         public string Description { get; set; }
         public string DepartmentName { get; set; }
-        public List<Department> Departments { get; set; }
+       // public List<Department> Departments { get; set; }
        
     }
 }
