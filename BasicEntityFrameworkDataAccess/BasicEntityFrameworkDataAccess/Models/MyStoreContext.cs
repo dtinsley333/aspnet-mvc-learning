@@ -18,6 +18,9 @@ namespace BasicEntityFrameworkDataAccess.Models
                 .ToTable("Customer")
                 .HasKey(c => c.CustomerId);
 
+
+
+
             modelBuilder.Entity<Employee>()
                 .ToTable("Employee")
                 .HasKey(c => c.EmployeeId);
