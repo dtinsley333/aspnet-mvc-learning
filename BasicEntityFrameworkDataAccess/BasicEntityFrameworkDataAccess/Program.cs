@@ -21,7 +21,7 @@ namespace BasicEntityFrameworkDataAccess
             {
                 Console.Write(employee.Name + " " + employee.City);
                     }
-            Console.ReadLine()
+            Console.ReadLine();
 
         }
        
