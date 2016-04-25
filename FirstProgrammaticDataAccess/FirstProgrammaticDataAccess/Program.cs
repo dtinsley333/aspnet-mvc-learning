@@ -21,51 +21,27 @@ namespace FirstProgrammaticDataAccess
             sb.Append("on ani.HabitatId = h.HabitatId ");
             sb.Append("order by ani.CommonName");
             var query = sb.ToString();
-
-            // 1. Instantiate the connection
-            SqlConnection conn = new SqlConnection(
-                "Data Source=alienware-pc\\sqlexpress;Initial Catalog=Zoolandia;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-
-            SqlDataReader rdr = null;
-
-            try
+            using (SqlConnection connection = new SqlConnection("Data Source=alienware-pc\\sqlexpress;Initial Catalog=Zoolandia;Integrated Security=True;Pooling=False"))
+            using (SqlCommand cmd = new SqlCommand(query, connection))
             {
-                //Open the connection
-                conn.Open();
-
-                //Pass the connection to a command object
-                SqlCommand cmd = new SqlCommand(query, conn);
-
-                //
-                //Use the connection
-                //
-
-                // get query results
-                rdr = cmd.ExecuteReader();
-
-                //Print the Common Name and Habitat for each animal
-                while (rdr.Read())
+                connection.Open();
+                using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    Console.WriteLine("Animal Name: " + rdr[0]+ "  Habitat: " + rdr[4]);
-                }
-            }
-            finally
-            {
-                //Close the reader
-                if (rdr != null)
-                {
-                    rdr.Close();
-                }
+                    // Check is the reader has any rows at all before starting to read.
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            Console.WriteLine("Animal Name: " + reader[0] + "  Habitat: " + reader[4]);
+                        }
+                    }
+                    Console.ReadLine();
 
-                //Close the connection
-                if (conn != null)
-                {
-                    conn.Close();
                 }
-                Console.ReadLine();
-
             }
         }
     }
 }
+       
+
   
