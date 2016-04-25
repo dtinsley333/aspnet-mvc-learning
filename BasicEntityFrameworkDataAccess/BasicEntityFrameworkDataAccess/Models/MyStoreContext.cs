@@ -8,17 +8,14 @@ namespace BasicEntityFrameworkDataAccess.Models
 {
     public class MyStoreContext: DbContext
     {
-    
         public DbSet<Employee> Employee { get; set; }
-        public DbSet<Customer> Customer { get; set; }
+        public DbSet<Department> Department { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Customer>()
-                .ToTable("Customer")
-                .HasKey(c => c.CustomerId);
-
-
+            modelBuilder.Entity<Department>()
+                .ToTable("Department")
+                .HasKey(c => c.DepartmentId);
 
 
             modelBuilder.Entity<Employee>()
