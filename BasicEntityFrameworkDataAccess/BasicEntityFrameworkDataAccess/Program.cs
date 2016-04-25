@@ -20,9 +20,9 @@ namespace BasicEntityFrameworkDataAccess
             Console.Write("EMPLOYEES FROM NASHVILLE" );
             Console.WriteLine(Environment.NewLine);
             foreach (var employee in employees)
-            {
+             {
                 Console.Write(employee.Name + " " + employee.City);
-                    }
+             }
             Console.WriteLine(Environment.NewLine);
 
             Console.Write("EMPLOYEE DEPARTMENT LISTING");
