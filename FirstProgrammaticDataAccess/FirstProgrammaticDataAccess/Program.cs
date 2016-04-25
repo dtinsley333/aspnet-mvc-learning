@@ -13,8 +13,8 @@ namespace FirstProgrammaticDataAccess
         {
 
             StringBuilder sb = new StringBuilder();
-            sb.Append("select ani.CommonName,");
-            sb.Append("ani.Gender,ani.Species,");
+            sb.Append("Select ani.CommonName,");
+            sb.Append("ani.Gender, ani.Species,");
             sb.Append("ani.AcquiredDate,");
             sb.Append("h.Name, h.[Description] ");
             sb.Append("from Animals ani join Habitat h ");
@@ -30,20 +30,20 @@ namespace FirstProgrammaticDataAccess
 
             try
             {
-                // 2. Open the connection
+                //Open the connection
                 conn.Open();
 
-                // 3. Pass the connection to a command object
+                //Pass the connection to a command object
                 SqlCommand cmd = new SqlCommand(query, conn);
 
                 //
-                // 4. Use the connection
+                //Use the connection
                 //
 
                 // get query results
                 rdr = cmd.ExecuteReader();
 
-                // print the CustomerID of each record
+                //Print the Common Name and Habitat for each animal
                 while (rdr.Read())
                 {
                     Console.WriteLine("Animal Name: " + rdr[0]+ "  Habitat: " + rdr[4]);
@@ -51,13 +51,13 @@ namespace FirstProgrammaticDataAccess
             }
             finally
             {
-                // close the reader
+                //Close the reader
                 if (rdr != null)
                 {
                     rdr.Close();
                 }
 
-                // 5. Close the connection
+                //Close the connection
                 if (conn != null)
                 {
                     conn.Close();
