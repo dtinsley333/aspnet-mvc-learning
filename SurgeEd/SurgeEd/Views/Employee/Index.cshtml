@@ -1,0 +1,39 @@
+﻿@model SurgeEd.ViewModels.EmployeeDepartmentDetailsViewModel
+@{
+    Layout = "~/Views/_SharedLayout.cshtml";
+}
+
+<h2>List Of Employees and their Departments</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.Label("First Name")
+        </th>
+        <th>
+            @Html.Label("Description")
+        </th>
+        <th>
+            @Html.Label("Department Name")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Employees)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartmentName)
+            </td>
+           
+        </tr>
+    }
+
+</table>

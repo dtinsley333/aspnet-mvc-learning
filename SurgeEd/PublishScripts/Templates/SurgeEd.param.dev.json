@@ -1,0 +1,32 @@
+{
+  "siteName": {
+    "value": "Surge-Ed"
+  },
+  "hostingPlanName": {
+    "value": "TekconV1"
+  },
+  "siteLocation": {
+    "value": "South Central US"
+  },
+  "sku": {
+    "value": "Free"
+  },
+  "workerSize": {
+    "value": "0"
+  },
+  "serverName": {
+    "value": "tekcon"
+  },
+  "serverLocation": {
+    "value": "South Central US"
+  },
+  "administratorLogin": {
+    "value": "tinsleyd"
+  },
+  "administratorLoginPassword": {
+    "value": "BreakAway*37"
+  },
+  "databaseName": {
+    "value": "Surge-Ed_db"
+  }
+}
