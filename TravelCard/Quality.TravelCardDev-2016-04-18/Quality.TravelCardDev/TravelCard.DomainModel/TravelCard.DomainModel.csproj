@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{77B30D0E-E0DD-4908-9C1E-B92B1F922714}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TravelCard.DomainModel</RootNamespace>
+    <AssemblyName>TravelCard.DomainModel</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\Quality.TravelCardWebUI\bin\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>..\Quality.TravelCardWebUI\bin\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.DynamicProxy2">
+      <HintPath>..\Quality.TravelCardWebUI\bin\Castle.DynamicProxy2.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\Quality.TravelCardWebUI\bin\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\Quality.TravelCardWebUI\packages\Ninject.2.2.1.4\lib\net40-Full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\Quality.TravelCardWebUI\packages\NUnit.2.5.10.11092\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.mocks">
+      <HintPath>..\Quality.TravelCardWebUI\packages\NUnit.2.5.10.11092\lib\nunit.mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="pnunit.framework">
+      <HintPath>..\Quality.TravelCardWebUI\packages\NUnit.2.5.10.11092\lib\pnunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\IAdditionalProcessingRepository.cs" />
+    <Compile Include="Abstract\IFrequencyRepository.cs" />
+    <Compile Include="Abstract\ILanguageRepository.cs" />
+    <Compile Include="Abstract\IMeasurementMethodRepository.cs" />
+    <Compile Include="Abstract\IMeasurementUnitRepository.cs" />
+    <Compile Include="Abstract\IPartCategoryRepository.cs" />
+    <Compile Include="Abstract\IPartSetUpRepository.cs" />
+    <Compile Include="Abstract\IPartSpecificationRepository.cs" />
+    <Compile Include="Abstract\IPartSpecificationSequenceRepository.cs" />
+    <Compile Include="Abstract\IPlantRepository.cs" />
+    <Compile Include="Abstract\ITCBarcodeRepository.cs" />
+    <Compile Include="Abstract\ITravelCardRepository.cs" />
+    <Compile Include="Abstract\IUserSettings.cs" />
+    <Compile Include="Entities\AdditionalProcessing.cs" />
+    <Compile Include="Entities\Frequency.cs" />
+    <Compile Include="Entities\Language.cs" />
+    <Compile Include="Entities\MeasurementMethod.cs" />
+    <Compile Include="Entities\MeasurementUnit.cs" />
+    <Compile Include="Entities\PartCategory.cs" />
+    <Compile Include="Entities\PartSetUp.cs" />
+    <Compile Include="Entities\PartSpecification.cs" />
+    <Compile Include="Entities\PartSpecificationSequence.cs" />
+    <Compile Include="Entities\Plant.cs" />
+    <Compile Include="Entities\Quality.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Quality.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TCBarCodes.cs" />
+    <Compile Include="Entities\TravelCard.cs" />
+    <Compile Include="Entities\UserSetting.cs" />
+    <Compile Include="Repositories\AdditionalProcessingRepository.cs" />
+    <Compile Include="Repositories\FrequencyRepository.cs" />
+    <Compile Include="Repositories\LanguageRepository.cs" />
+    <Compile Include="Repositories\MeasurementMethodRepository.cs" />
+    <Compile Include="Repositories\MeasurementUnitRepository.cs" />
+    <Compile Include="Repositories\PartCategoryRepository.cs" />
+    <Compile Include="Repositories\PartSetUpRepository.cs" />
+    <Compile Include="Repositories\PartSpecificationRepository.cs" />
+    <Compile Include="Repositories\PartSpecificationSequenceRepository.cs" />
+    <Compile Include="Repositories\PlantRepository.cs" />
+    <Compile Include="Repositories\TCBarCodeRepository.cs" />
+    <Compile Include="Repositories\TravelCardRepository.cs" />
+    <Compile Include="Repositories\UserSettingRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="Entities\Quality.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Quality.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,287 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<%@ Import Namespace="Quality.Extensions" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+
+
+  
+	<link href="http://tn-sqldevel:3333/contents/site.css" rel="stylesheet" type="text/css" />
+    <link href="http://tn-sqldevel:9777/content/ui.all.css" rel="stylesheet" type="text/css" />
+      <link href="http://tn-sqldevel:9777/Scripts/jquery-ui-1.8.custom.css" rel="stylesheet" type="text/css" />
+  <link href="http://tn-sqldevel:3333/content/ui.datepicker.css" rel="stylesheet" type="text/css" />
+       <link href="http://tn-sqldevel:9777/Scripts/tipsy.css" rel="stylesheet" type="text/css" />
+       <link href="http://tn-sqldevel:9777/Scripts/fg.menu.css" media="screen" type="text/css" rel="stylesheet" />
+    <link href="http://tn-sqldevel:9777/Scripts/theme/ui.theme.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="http://tn-sqldevel:9777/Scripts/theme/ui.all.css" media="screen" type="text/css"rel="stylesheet" />
+  <%string savedsuccessful=Quality.Resources.Strings.SavedSuccessfully; %>
+  	<script src="<%= Url.Content("~/Scripts/MicrosoftAjax.js")%>" type="text/javascript"></script>
+    	<script src="<%= Url.Content("~/Scripts/MicrosoftMvcAjax.js")%>" type="text/javascript"></script>
+ 	<script src="<%= Url.Content("~/Scripts/jquery-1.6.2.min.js")%>" type="text/javascript"></script>
+ 		<script src="<%= Url.Content("~/Scripts/jquery.download.js") %>" type="text/javascript"></script> 
+	<script src="<%= Url.Content("~/Scripts/jquery.tablesorter.min.js") %>"type="text/javascript"></script>
+    	<script src="<%= Url.Content("~/scripts/JQuery.Color.js") %>"type="text/javascript"></script>
+	<script src="<%= Url.Content("~/Scripts/fg.menu.js") %>"  type="text/javascript"></script>
+  <script src="<%= Url.Content("~/Scripts/fg.menu.js") %>"  type="text/javascript"></script>
+   <script src="<%= Url.Content("~/Scripts/jquery.tipsy.js") %>" type="text/javascript"></script>
+     <script src="<%= Url.Content("~/scripts/jquery.dialogBox.js") %>" type="text/javascript"></script>
+      <script src="<%=Url.Content("http://tn-sqldevel:3333/scripts/jquery.ui.datepicker.js") %>" type="text/javascript"></script>
+     <script src="<%=Url.Content("http://tn-sqldevel:3333/scripts/jquery.ui.core.js") %>" type="text/javascript"></script>
+
+ <script language="javascript" type="text/javascript">
+     $(this).ready(function () {
+
+         $("#GetPdf").click(function () {
+             theHtml = $("html").html()
+             $.download('<%= Url.Action("StandardPdfReport","Reports") %>', { filename: "pdf_printout", format: "pdf", html_: theHtml }, "post");
+         });
+     });
+
+	  </script>
+ <script language="javascript" type="text/javascript">
+ function PrepareFields(){
+           
+            $(".date-edit-field")
+                .formatDate()
+                .mask("99/99/9999")
+                .datepicker({changeMonth:true, changeYear:true});
+            $(".startup-item").after("<span class='startup-item-icon' title='Startup item'> </span>");
+        }
+        
+
+        </script>
+
+
+ <script type="text/javascript" language="javascript">
+     $(document).ready(function () {
+     
+         $("#TableToSort").tablesorter({ headers: { 0: { sorter: false}} });
+
+     });
+    </script>
+ <script type ="text/javascript">
+			var shouldShowSavej = new Boolean(<%= (TempData["_shouldShowMessage"] == null) ? "false" : TempData["_shouldShowMessage"].ToString().ToLower() %>);
+	
+
+     
+          $(document).ready(function(){
+          
+            if(shouldShowSaveSuccessful == true){
+                ShowSaveSuccessful();
+            }
+        });
+ function ShowSaveSuccessful(){
+            $("#NotificationContainer").empty().append("<span class='notification'><span class='notification-close' >x</span>Save Successful</span>");
+            $(".notification").animate({ backgroundColor: "#006400" }, 800); 
+            $(".notification-close").click(function(){
+                $(".notification").slideUp();
+            });
+        }
+
+
+		$("*[tooltip]").tipsy({
+			   live: true,
+			   delayIn: 4,
+			   delayOut: 4,
+			   fade: true,
+			   gravity: 'w',
+			   opacity: 1.0,   
+			   title: 'tooltip'});
+		
+		
+		
+		
+		$('textarea[maxlength]').live("keyup focus click paste drop", function(){
+	   var max = parseInt($(this).attr('maxlength'));
+if($(this).val().length > max){
+$(this).val($(this).val().substr(0, $(this).attr('maxlength')));
+}
+
+var remaining = (max - $(this).val().length);
+
+var remainingCountElementID = this.id + "_RemainingCount";
+
+var $RemainingCountElement = $("#" + remainingCountElementID);
+
+var message = remaining + " of " + max + " remaining";
+
+if($RemainingCountElement.length > 0){
+   $RemainingCountElement.html(message);
+   if($RemainingCountElement.css("display") == "none"){
+	   $RemainingCountElement.slideDown();
+   }
+	}else{
+		   $(this).before("<span style='display:none;' id='" + remainingCountElementID + "' class='remaining-character-count'>" + message + "</span><br />");
+		   $RemainingCountElement.slideDown();
+   }
+
+ if(remaining <= (max * .05))
+		   $RemainingCountElement.css("color","red");
+ else
+		   $RemainingCountElement.css("color","#494949"); /* dark grey */
+});
+
+$('textarea[maxlength]').live("blur", function(){
+   var remainingCountElementID = this.id + "_RemainingCount";
+   $("#" + remainingCountElementID).slideUp();
+});
+		
+
+		$(".hide-parent-link").live("click",function(){
+			$(this).parent().parent().remove();
+		});
+		$(".cancel-edit").live("click",AskAreYouSureYouWantToLeave);
+		
+		$(document).ready(function(){
+			
+		
+		
+			
+			//-------------------------------------------------------------------------------------------------
+			
+
+			 $('.fg-button').hover(
+				function () { $(this).removeClass('ui-state-default').addClass('ui-state-focus'); },
+				function () { $(this).removeClass('ui-state-focus').addClass('ui-state-default'); }
+			);
+
+        $('#FloorMenuButton').menu({
+            content: $('#FloorMenuButton').next().html(),
+            backLink: false,
+            flyOut: true
+        });
+
+         $('#SpanishMenuButton').menu({
+            content: $('#SpanishMenuButton').next().html(),
+            backLink: false,
+            flyOut: true
+        });
+
+
+
+        $('#TravelCardMaintenanceMenuButton').menu({
+            content: $('#TravelCardMaintenanceMenuButton').next().html(),
+            backLink: false,
+            flyOut: true
+        });
+
+        $('#AdminMenuButton').menu({
+            content: $('#AdminMenuButton').next().html(),
+            backLink: false,
+            flyOut: true
+        });
+          $('#GlobalUpDatesMenuButton').menu({
+            content: $('#GlobalUpDatesMenuButton').next().html(),
+            backLink: false,
+            flyOut: true
+        });
+
+        $('#HelpMenuButton').menu({
+            content: $('#HelpMenuButton').next().html(),
+            backLink: false,
+            flyOut: true
+        });
+       
+
+        $('#UserSettingsButton').menu({
+            content: $('#UserSettingsButton').next().html(),
+            backLink: false,
+            flyOut: true
+        });
+
+
+			//-------------------------------------------------------------------------------------------------
+		});
+		
+		function AttachDeleteBehavior(){
+			$(".delete-record").click(function(){
+				$(this).parent().parent().css("color","red");
+				if(confirm("Are you sure you want to delete this row?")){
+					return true;
+				}
+				else{
+					$(this).parent().parent().css("color","black")
+					return false;
+				}
+			});
+		}
+		
+	 
+		
+		
+		function AskAreYouSureYouWantToLeave(){
+			return confirm( "Are you sure you want to leave this page? All unsaved changes will be lost." );
+		}
+	
+ 
+	</script>
+			   
+	 <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+
+	<asp:ContentPlaceHolder ID="HeadContent" runat="server"> 
+  
+  </asp:ContentPlaceHolder>
+</head>
+<body >
+   
+
+	  <div id='Wrapper' class='Wrapper'>
+ <br /><br />
+         <div id='NotificationContainer'></div>  
+ <span style='position:relative;
+	float:right;
+top:15px;
+	font-size:85%;
+	font-weight:bold;
+	padding:5px;
+	color:Black;
+	z-index:10;'><%Html.RenderAction("UserHeadline", "UserProfile"); %>    <br />
+   </span>
+      
+   <% string pdffilepath = ConfigurationManager.AppSettings["PDFImageFilePath"];%>
+    <% string ideallogo = ConfigurationManager.AppSettings["ideallogo"];%>
+    	<%  
+		 
+				string userversion = ConfigurationManager.AppSettings["userversion"];
+				%>
+          <br />  
+  <div>
+				  <div id="header">
+		   <span class="ideallogo"  ><a href="<%=Url.Action("PartMaintenanceIndex","TravelCard") %>" ><img src="<%=ideallogo%> "  style="text-decoration: none;
+	border: 0 none;" /> </a> </span><br /><br /> <span class="headertitle"><%=Quality.Resources.Strings.AppTitle%>-<%=userversion%>&nbsp;&nbsp;Version: <%=Html.CurrentVersion()%></span>
+     
+   </div>
+               
+			<div id="title">
+			</div>
+		
+
+		</div>
+		   
+
+	   <asp:ContentPlaceHolder ID="Main_MenubarContent" runat="server">
+
+     	<%Html.RenderAction("Menubar", "UserProfile"); %>
+           <br /><span id='GetPdf' class='export-pdf'>Save Page to PDF<img src="http://tn-sqldevel:3333/contents/images/pdf.gif" /></span>    
+       </asp:ContentPlaceHolder>  
+			<asp:ContentPlaceHolder ID="MainContent" runat="server" />
+       
+
+		
+
+			<div id="Footer" class="footer"'>
+		<div id="CopyRight">
+			<div><%:Quality.Resources.Strings.CopyWrite %></div>
+		  
+			
+		 
+		</div>
+	</div></div>
+ 
+</body>
+</html>
+
+
+
+

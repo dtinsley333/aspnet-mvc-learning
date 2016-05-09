@@ -1,0 +1,1216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Quality_devModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="Quality_devModelStoreContainer">
+          <EntitySet Name="AdditionalProcessing" EntityType="Quality_devModel.Store.AdditionalProcessing" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AdditionalProcessingHeadings" EntityType="Quality_devModel.Store.AdditionalProcessingHeadings" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Frequency" EntityType="Quality_devModel.Store.Frequency" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Languages" EntityType="Quality_devModel.Store.Languages" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Log" EntityType="Quality_devModel.Store.Log" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MeasurementMethod" EntityType="Quality_devModel.Store.MeasurementMethod" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MeasurementUnits" EntityType="Quality_devModel.Store.MeasurementUnits" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PartCategory" EntityType="Quality_devModel.Store.PartCategory" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PartSetUp" EntityType="Quality_devModel.Store.PartSetUp" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PartSpecification" EntityType="Quality_devModel.Store.PartSpecification" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PartSpecificationHeadings" EntityType="Quality_devModel.Store.PartSpecificationHeadings" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PartSpecificationSequence" EntityType="Quality_devModel.Store.PartSpecificationSequence" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Plant" EntityType="Quality_devModel.Store.Plant" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="Quality_devModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TCBarCode" EntityType="Quality_devModel.Store.TCBarCode" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TravelCard" EntityType="Quality_devModel.Store.TravelCard" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserSettings" EntityType="Quality_devModel.Store.UserSettings" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_PartSpecification_Frequency" Association="Quality_devModel.Store.FK_PartSpecification_Frequency">
+            <End Role="Frequency" EntitySet="Frequency" />
+            <End Role="PartSpecification" EntitySet="PartSpecification" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PartSpecification_MeasurementMethod" Association="Quality_devModel.Store.FK_PartSpecification_MeasurementMethod">
+            <End Role="MeasurementMethod" EntitySet="MeasurementMethod" />
+            <End Role="PartSpecification" EntitySet="PartSpecification" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserSettings_Languages" Association="Quality_devModel.Store.FK_UserSettings_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="UserSettings" EntitySet="UserSettings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserSettings_Plant1" Association="Quality_devModel.Store.FK_UserSettings_Plant1">
+            <End Role="Plant" EntitySet="Plant" />
+            <End Role="UserSettings" EntitySet="UserSettings" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AdditionalProcessing">
+          <Key>
+            <PropertyRef Name="ProcessingID" />
+          </Key>
+          <Property Name="ProcessingID" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PartSetUpID" Type="smallint" Nullable="false" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Description" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="DescriptionES" Type="varchar" MaxLength="100" />
+          <Property Name="DescriptionCN" Type="nvarchar" MaxLength="100" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="SequenceID" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="LastEditDate" Type="smalldatetime" />
+          <Property Name="LastEditedBy" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="AdditionalProcessingHeadings">
+          <Key>
+            <PropertyRef Name="ProcessingHeadingID" />
+          </Key>
+          <Property Name="ProcessingHeadingID" Type="smallint" Nullable="false" />
+          <Property Name="ProcessingID" Type="smallint" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="Text" Type="varchar" MaxLength="30" />
+          <Property Name="LastEditedBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastEditDate" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="Frequency">
+          <Key>
+            <PropertyRef Name="FrequencyID" />
+          </Key>
+          <Property Name="FrequencyID" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Description_EN" Type="varchar" Nullable="false" MaxLength="120" />
+          <Property Name="Description_MX" Type="varchar" MaxLength="120" />
+          <Property Name="Description_CN" Type="varchar" MaxLength="120" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="1000" />
+          <Property Name="CreateDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="LastEditDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="LastEditBy" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Languages">
+          <Key>
+            <PropertyRef Name="LanguageID" />
+          </Key>
+          <Property Name="LanguageID" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LanguageCode" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="LanguageName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Log">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Thread" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Level" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Logger" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Message" Type="varchar" Nullable="false" MaxLength="4000" />
+        </EntityType>
+        <EntityType Name="MeasurementMethod">
+          <Key>
+            <PropertyRef Name="MeasurementMethodID" />
+          </Key>
+          <Property Name="MeasurementMethodID" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Description_EN" Type="varchar" Nullable="false" MaxLength="120" />
+          <Property Name="Description_MX" Type="varchar" MaxLength="120" />
+          <Property Name="Description_CN" Type="varchar" MaxLength="120" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="1000" />
+          <Property Name="CreateDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="LastEditDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="LastEditBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MeasurementUnits">
+          <Key>
+            <PropertyRef Name="unitID" />
+          </Key>
+          <Property Name="unitID" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Abbreviation" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PartCategory">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CategoryNameES" Type="varchar" MaxLength="50" />
+          <Property Name="CategoryNameCN" Type="varchar" MaxLength="50" />
+          <Property Name="CategoryDescriptionES" Type="varchar" MaxLength="100" />
+          <Property Name="CategoryDescriptionCN" Type="nvarchar" MaxLength="100" />
+          <Property Name="CategoryDescription" Type="varchar" MaxLength="100" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="1000" />
+          <Property Name="LastEditedBy" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="LastEditDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="CreateDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PartSetUp">
+          <Key>
+            <PropertyRef Name="PartSetUpID" />
+          </Key>
+          <Property Name="PartSetUpID" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PartID" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CategoryID" Type="smallint" Nullable="false" />
+          <Property Name="Revision" Type="varchar" MaxLength="4" />
+          <Property Name="CreatedBy" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreateDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="QualityAlertFile" Type="varchar" MaxLength="250" />
+          <Property Name="QualityAlertStartDte" Type="smalldatetime" />
+          <Property Name="QualityAlertEndDte" Type="smalldatetime" />
+          <Property Name="QualityAlert2" Type="varchar" MaxLength="250" />
+          <Property Name="QualityAlert2StartDte" Type="smalldatetime" />
+          <Property Name="QualityAlert2EndDte" Type="smalldatetime" />
+          <Property Name="PackCode" Type="varchar" MaxLength="7" />
+          <Property Name="DrawingNumber" Type="varchar" MaxLength="150" />
+          <Property Name="DrawingFile" Type="varchar" MaxLength="250" />
+          <Property Name="DieSetUpFile" Type="varchar" MaxLength="250" />
+          <Property Name="DeviationFile" Type="varchar" MaxLength="250" />
+          <Property Name="DeviationFileStartDte" Type="smalldatetime" />
+          <Property Name="DeviationFileEndDte" Type="smalldatetime" />
+          <Property Name="DeviationFile2" Type="varchar" MaxLength="250" />
+          <Property Name="DeviationFile2StartDte" Type="smalldatetime" />
+          <Property Name="DeviationFile2EndDte" Type="smalldatetime" />
+          <Property Name="AdditionalFile" Type="varchar" MaxLength="250" />
+          <Property Name="SetupDrawingFile" Type="varchar" MaxLength="250" />
+          <Property Name="HasQualityAlert" Type="bit" Nullable="false" />
+          <Property Name="RedLightGreenLightFile" Type="varchar" MaxLength="250" />
+          <Property Name="PartIsActive" Type="bit" Nullable="false" />
+          <Property Name="IsReleaseReady" Type="bit" Nullable="false" />
+          <Property Name="PartComment" Type="varchar" MaxLength="300" />
+          <Property Name="PartRemarks" Type="varchar" MaxLength="1000" />
+          <Property Name="CommunicationNote" Type="varchar" MaxLength="250" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="1000" />
+          <Property Name="LastApprovalDateTime" Type="smalldatetime" />
+          <Property Name="LastApprover" Type="varchar" MaxLength="50" />
+          <Property Name="LastEditDate" Type="smalldatetime" />
+          <Property Name="LastEditBy" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PartSpecification">
+          <Key>
+            <PropertyRef Name="SpecificationID" />
+          </Key>
+          <Property Name="SpecificationID" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PartSetUpID" Type="smallint" Nullable="false" />
+          <Property Name="SequenceID" Type="varchar" MaxLength="50" />
+          <Property Name="Characteristic" Type="varchar" MaxLength="250" />
+          <Property Name="CharacteristicCN" Type="nvarchar" MaxLength="250" />
+          <Property Name="CharacteristicES" Type="varchar" MaxLength="250" />
+          <Property Name="unitID" Type="smallint" />
+          <Property Name="LowSpec" Type="varchar" MaxLength="100" />
+          <Property Name="LowSpecES" Type="varchar" MaxLength="100" />
+          <Property Name="HighSpec" Type="varchar" MaxLength="100" />
+          <Property Name="HighSpecES" Type="varchar" MaxLength="100" />
+          <Property Name="SampleSize" Type="varchar" MaxLength="100" />
+          <Property Name="SampleSizeES" Type="varchar" MaxLength="100" />
+          <Property Name="MeasurementMethodID" Type="smallint" />
+          <Property Name="FrequencyID" Type="smallint" />
+          <Property Name="Gauges" Type="varchar" MaxLength="100" />
+          <Property Name="GaugesCN" Type="varchar" MaxLength="100" />
+          <Property Name="GaugesES" Type="nchar" MaxLength="10" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="1000" />
+          <Property Name="OperationCode" Type="smallint" />
+          <Property Name="IsComponentCharacteristic" Type="bit" Nullable="false" />
+          <Property Name="IsMachineSetUpCharacteristic" Type="bit" Nullable="false" />
+          <Property Name="IsPartCharacteristic" Type="bit" Nullable="false" />
+          <Property Name="IsDieSetUpCharcteristic" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="LastEditDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="LastEditBy" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PartSpecificationHeadings">
+          <Key>
+            <PropertyRef Name="SpecificationHeadingID" />
+          </Key>
+          <Property Name="SpecificationHeadingID" Type="smallint" Nullable="false" />
+          <Property Name="SpecificationID" Type="smallint" Nullable="false" />
+          <Property Name="Text" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="LastEditedBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastEditDate" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="PartSpecificationSequence">
+          <Key>
+            <PropertyRef Name="SequenceOrderID" />
+          </Key>
+          <Property Name="SequenceOrderID" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SequenceOrder" Type="smallint" Nullable="false" />
+          <Property Name="SequenceText" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Plant">
+          <Key>
+            <PropertyRef Name="PlantCodeID" />
+          </Key>
+          <Property Name="PlantCodeID" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PlantCode" Type="varchar" Nullable="false" MaxLength="6" />
+          <Property Name="PlantName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TCBarCode">
+          <Key>
+            <PropertyRef Name="TCBarCodeID" />
+          </Key>
+          <Property Name="TCBarCodeID" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PartSetUpID" Type="smallint" Nullable="false" />
+          <Property Name="BarCodeText" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="BarCodeFile" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="TravelCard">
+          <Key>
+            <PropertyRef Name="TCID" />
+          </Key>
+          <Property Name="TCID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PartSetUpID" Type="smallint" Nullable="false" />
+          <Property Name="IsContinuationCard" Type="bit" Nullable="false" />
+          <Property Name="TCBarCodeText" Type="varchar" MaxLength="1000" />
+          <Property Name="IsDraft" Type="bit" Nullable="false" />
+          <Property Name="OperationCode" Type="smallint" />
+          <Property Name="LanguageID" Type="smallint" Nullable="false" />
+          <Property Name="PrintDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="PrintLocation" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="PrintedBy" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="UserSettings">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="PlantCodeID" Type="smallint" Nullable="false" />
+          <Property Name="LanguageID" Type="smallint" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_PartSpecification_Frequency">
+          <End Role="Frequency" Type="Quality_devModel.Store.Frequency" Multiplicity="0..1" />
+          <End Role="PartSpecification" Type="Quality_devModel.Store.PartSpecification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Frequency">
+              <PropertyRef Name="FrequencyID" />
+            </Principal>
+            <Dependent Role="PartSpecification">
+              <PropertyRef Name="FrequencyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PartSpecification_MeasurementMethod">
+          <End Role="MeasurementMethod" Type="Quality_devModel.Store.MeasurementMethod" Multiplicity="0..1" />
+          <End Role="PartSpecification" Type="Quality_devModel.Store.PartSpecification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MeasurementMethod">
+              <PropertyRef Name="MeasurementMethodID" />
+            </Principal>
+            <Dependent Role="PartSpecification">
+              <PropertyRef Name="MeasurementMethodID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserSettings_Languages">
+          <End Role="Languages" Type="Quality_devModel.Store.Languages" Multiplicity="1" />
+          <End Role="UserSettings" Type="Quality_devModel.Store.UserSettings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="LanguageID" />
+            </Principal>
+            <Dependent Role="UserSettings">
+              <PropertyRef Name="LanguageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserSettings_Plant1">
+          <End Role="Plant" Type="Quality_devModel.Store.Plant" Multiplicity="1" />
+          <End Role="UserSettings" Type="Quality_devModel.Store.UserSettings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Plant">
+              <PropertyRef Name="PlantCodeID" />
+            </Principal>
+            <Dependent Role="UserSettings">
+              <PropertyRef Name="PlantCodeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Quality_devModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="Quality_devEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AdditionalProcessings" EntityType="Quality_devModel.AdditionalProcessing" />
+          <EntitySet Name="AdditionalProcessingHeadings" EntityType="Quality_devModel.AdditionalProcessingHeading" />
+          <EntitySet Name="PartCategories" EntityType="Quality_devModel.PartCategory" />
+          <EntitySet Name="PartSetUp" EntityType="Quality_devModel.PartSetUp" />
+          <EntitySet Name="PartSpecifications" EntityType="Quality_devModel.PartSpecification" />
+          <EntitySet Name="PartSpecificationHeadings" EntityType="Quality_devModel.PartSpecificationHeading" />
+          <EntitySet Name="TravelCards" EntityType="Quality_devModel.TravelCard" />
+          <AssociationSet Name="FK_AdditionalProcessing_PartSetUp1" Association="Quality_devModel.FK_AdditionalProcessing_PartSetUp1">
+            <End Role="PartSetUp" EntitySet="PartSetUp" />
+            <End Role="AdditionalProcessing" EntitySet="AdditionalProcessings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdditionalProcessingHeadings_AdditionalProcessing" Association="Quality_devModel.FK_AdditionalProcessingHeadings_AdditionalProcessing">
+            <End Role="AdditionalProcessing" EntitySet="AdditionalProcessings" />
+            <End Role="AdditionalProcessingHeadings" EntitySet="AdditionalProcessingHeadings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PartSetUp_PartCategory" Association="Quality_devModel.FK_PartSetUp_PartCategory">
+            <End Role="PartCategory" EntitySet="PartCategories" />
+            <End Role="PartSetUp" EntitySet="PartSetUp" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PartSpecification_PartSetUp1" Association="Quality_devModel.FK_PartSpecification_PartSetUp1">
+            <End Role="PartSetUp" EntitySet="PartSetUp" />
+            <End Role="PartSpecification" EntitySet="PartSpecifications" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TravelCard_PartSetUp1" Association="Quality_devModel.FK_TravelCard_PartSetUp1">
+            <End Role="PartSetUp" EntitySet="PartSetUp" />
+            <End Role="TravelCard" EntitySet="TravelCards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PartSpecificationHeadings_PartSpecification" Association="Quality_devModel.FK_PartSpecificationHeadings_PartSpecification">
+            <End Role="PartSpecification" EntitySet="PartSpecifications" />
+            <End Role="PartSpecificationHeadings" EntitySet="PartSpecificationHeadings" />
+          </AssociationSet>
+          <EntitySet Name="Frequencies" EntityType="Quality_devModel.Frequency" />
+          <EntitySet Name="MeasurementMethods" EntityType="Quality_devModel.MeasurementMethod" />
+          <AssociationSet Name="FK_PartSpecification_Frequency" Association="Quality_devModel.FK_PartSpecification_Frequency">
+            <End Role="Frequency" EntitySet="Frequencies" />
+            <End Role="PartSpecification" EntitySet="PartSpecifications" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PartSpecification_MeasurementMethod" Association="Quality_devModel.FK_PartSpecification_MeasurementMethod">
+            <End Role="MeasurementMethod" EntitySet="MeasurementMethods" />
+            <End Role="PartSpecification" EntitySet="PartSpecifications" />
+          </AssociationSet>
+          <EntitySet Name="sysdiagrams" EntityType="Quality_devModel.sysdiagram" />
+          <EntitySet Name="Languages" EntityType="Quality_devModel.Language" />
+          <EntitySet Name="Plants" EntityType="Quality_devModel.Plant" />
+          <EntitySet Name="UserSettings" EntityType="Quality_devModel.UserSetting" />
+          <EntitySet Name="Logs" EntityType="Quality_devModel.Log" />
+          <AssociationSet Name="FK_UserSettings_Plant" Association="Quality_devModel.FK_UserSettings_Plant">
+            <End Role="Plant" EntitySet="Plants" />
+            <End Role="UserSetting" EntitySet="UserSettings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserSettings_Languages" Association="Quality_devModel.FK_UserSettings_Languages">
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="UserSetting" EntitySet="UserSettings" />
+          </AssociationSet>
+          <EntitySet Name="MeasurementUnits" EntityType="Quality_devModel.MeasurementUnit" />
+          <AssociationSet Name="FK_MeasurementUnits_MeasurementUnits" Association="Quality_devModel.FK_MeasurementUnits_MeasurementUnits">
+            <End Role="MeasurementUnit" EntitySet="MeasurementUnits" />
+            <End Role="MeasurementUnit1" EntitySet="MeasurementUnits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PartSpecification_MeasurementUnits" Association="Quality_devModel.FK_PartSpecification_MeasurementUnits">
+            <End Role="MeasurementUnit" EntitySet="MeasurementUnits" />
+            <End Role="PartSpecification" EntitySet="PartSpecifications" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TravelCard_Languages" Association="Quality_devModel.FK_TravelCard_Languages">
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="TravelCard" EntitySet="TravelCards" />
+          </AssociationSet>
+          <EntitySet Name="TCBarCodes" EntityType="Quality_devModel.TCBarCode" />
+          <EntitySet Name="PartSpecificationSequences" EntityType="Quality_devModel.PartSpecificationSequence" />
+        </EntityContainer>
+        <EntityType Name="AdditionalProcessing">
+          <Key>
+            <PropertyRef Name="ProcessingID" />
+          </Key>
+          <Property Name="ProcessingID" Type="Int16" Nullable="false" />
+          <Property Name="PartSetUpID" Type="Int16" Nullable="false" />
+          <Property Name="Notes" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="SequenceID" Type="String" Nullable="false" />
+          <Property Name="LastEditDate" Type="DateTime" />
+          <Property Name="LastEditedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="PartSetUp" Relationship="Quality_devModel.FK_AdditionalProcessing_PartSetUp1" FromRole="AdditionalProcessing" ToRole="PartSetUp" />
+          <NavigationProperty Name="AdditionalProcessingHeadings" Relationship="Quality_devModel.FK_AdditionalProcessingHeadings_AdditionalProcessing" FromRole="AdditionalProcessing" ToRole="AdditionalProcessingHeadings" />
+          <Property Type="String" Name="DescriptionES" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DescriptionCN" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="AdditionalProcessingHeading">
+          <Key>
+            <PropertyRef Name="ProcessingHeadingID" />
+          </Key>
+          <Property Name="ProcessingHeadingID" Type="Int16" Nullable="false" />
+          <Property Name="ProcessingID" Type="Int16" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="Text" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="LastEditedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastEditDate" Type="DateTime" />
+          <NavigationProperty Name="AdditionalProcessing" Relationship="Quality_devModel.FK_AdditionalProcessingHeadings_AdditionalProcessing" FromRole="AdditionalProcessingHeadings" ToRole="AdditionalProcessing" />
+        </EntityType>
+        <EntityType Name="PartCategory">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CategoryDescription" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="PartSetUps" Relationship="Quality_devModel.FK_PartSetUp_PartCategory" FromRole="PartCategory" ToRole="PartSetUp" />
+          <Property Type="String" Name="CategoryNameES" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CategoryDescriptionES" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CategoryNameCN" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CategoryDescriptionCN" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Notes" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LastEditedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="LastEditDate" Nullable="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PartSetUp">
+          <Key>
+            <PropertyRef Name="PartSetUpID" />
+          </Key>
+          <Property Name="PartSetUpID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PartID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CategoryID" Type="Int16" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" />
+          <Property Name="DrawingFile" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="DeviationFile" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="Revision" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="SetupDrawingFile" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="HasQualityAlert" Type="Boolean" Nullable="false" />
+          <Property Name="IsReleaseReady" Type="Boolean" Nullable="false" />
+          <Property Name="LastApprovalDateTime" Type="DateTime" />
+          <Property Name="LastApprover" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastEditDate" Type="DateTime" />
+          <Property Name="LastEditBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="AdditionalProcessings" Relationship="Quality_devModel.FK_AdditionalProcessing_PartSetUp1" FromRole="PartSetUp" ToRole="AdditionalProcessing" />
+          <NavigationProperty Name="PartCategory" Relationship="Quality_devModel.FK_PartSetUp_PartCategory" FromRole="PartSetUp" ToRole="PartCategory" />
+          <NavigationProperty Name="PartSpecifications" Relationship="Quality_devModel.FK_PartSpecification_PartSetUp1" FromRole="PartSetUp" ToRole="PartSpecification" />
+          <NavigationProperty Name="TravelCards" Relationship="Quality_devModel.FK_TravelCard_PartSetUp1" FromRole="PartSetUp" ToRole="TravelCard" />
+          <Property Type="String" Name="Notes" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="QualityAlertFile" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="PartIsActive" Nullable="false" />
+          <Property Type="String" Name="DieSetUpFile" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CommunicationNote" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DrawingNumber" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PackCode" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RedLightGreenLightFile" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PartComment" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PartRemarks" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="QualityAlertStartDte" />
+          <Property Type="DateTime" Name="QualityAlertEndDte" />
+          <Property Type="String" Name="QualityAlert2" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="QualityAlert2StartDte" />
+          <Property Type="DateTime" Name="QualityAlert2EndDte" />
+          <Property Type="DateTime" Name="DeviationFileStartDte" />
+          <Property Type="DateTime" Name="DeviationFileEndDte" />
+          <Property Type="String" Name="DeviationFile2" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="DeviationFile2StartDte" />
+          <Property Type="DateTime" Name="DeviationFile2EndDte" />
+          <Property Type="String" Name="AdditionalFile" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PartSpecification">
+          <Key>
+            <PropertyRef Name="SpecificationID" />
+          </Key>
+          <Property Name="SpecificationID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PartSetUpID" Type="Int16" Nullable="false" />
+          <Property Name="SequenceID" Type="String" />
+          <Property Name="LowSpec" Type="String" MaxLength="50" Unicode="false" FixedLength="false" Nullable="true" />
+          <Property Name="HighSpec" Type="String" MaxLength="50" Unicode="false" FixedLength="false" Nullable="true" />
+          <Property Name="Notes" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="LastEditDate" Type="DateTime" Nullable="false" />
+          <Property Name="LastEditBy" Type="String" Nullable="false" />
+          <NavigationProperty Name="PartSetUp" Relationship="Quality_devModel.FK_PartSpecification_PartSetUp1" FromRole="PartSpecification" ToRole="PartSetUp" />
+          <NavigationProperty Name="PartSpecificationHeadings" Relationship="Quality_devModel.FK_PartSpecificationHeadings_PartSpecification" FromRole="PartSpecification" ToRole="PartSpecificationHeadings" />
+          <Property Type="String" Name="Characteristic" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SampleSize" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsComponentCharacteristic" Nullable="false" />
+          <Property Type="Boolean" Name="IsMachineSetUpCharacteristic" Nullable="false" />
+          <Property Type="Boolean" Name="IsPartCharacteristic" Nullable="false" />
+          <Property Type="Boolean" Name="IsDieSetUpCharcteristic" Nullable="false" />
+          <Property Type="String" Name="CharacteristicES" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LowSpecES" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="HighSpecES" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SampleSizeES" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Gauges" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="GaugesES" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="Int16" Name="FrequencyID" Nullable="true" />
+          <Property Type="Int16" Name="MeasurementMethodID" />
+          <NavigationProperty Name="Frequency1" Relationship="Quality_devModel.FK_PartSpecification_Frequency" FromRole="PartSpecification" ToRole="Frequency" />
+          <NavigationProperty Name="MeasurementMethod1" Relationship="Quality_devModel.FK_PartSpecification_MeasurementMethod" FromRole="PartSpecification" ToRole="MeasurementMethod" />
+          <Property Type="Int16" Name="OperationCode" />
+          <Property Type="String" Name="CharacteristicCN" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="unitID" />
+          <Property Type="String" Name="GaugesCN" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="MeasurementUnit" Relationship="Quality_devModel.FK_PartSpecification_MeasurementUnits" FromRole="PartSpecification" ToRole="MeasurementUnit" />
+        </EntityType>
+        <EntityType Name="PartSpecificationHeading">
+          <Key>
+            <PropertyRef Name="SpecificationHeadingID" />
+          </Key>
+          <Property Name="SpecificationHeadingID" Type="Int16" Nullable="false" />
+          <Property Name="SpecificationID" Type="Int16" Nullable="false" />
+          <Property Name="Text" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="LastEditedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastEditDate" Type="DateTime" />
+          <NavigationProperty Name="PartSpecification" Relationship="Quality_devModel.FK_PartSpecificationHeadings_PartSpecification" FromRole="PartSpecificationHeadings" ToRole="PartSpecification" />
+        </EntityType>
+        <EntityType Name="TravelCard">
+          <Key>
+            <PropertyRef Name="TCID" />
+          </Key>
+          <Property Name="TCID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PartSetUpID" Type="Int16" Nullable="false" />
+          <Property Name="PrintDate" Type="DateTime" Nullable="false" />
+          <Property Name="PrintLocation" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PrintedBy" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Notes" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="PartSetUp" Relationship="Quality_devModel.FK_TravelCard_PartSetUp1" FromRole="TravelCard" ToRole="PartSetUp" />
+          <Property Type="Boolean" Name="IsDraft" Nullable="false" />
+          <Property Type="Boolean" Name="IsContinuationCard" Nullable="false" />
+          <Property Type="Int16" Name="OperationCode" />
+          <Property Type="Int16" Name="LanguageID" Nullable="false" />
+          <NavigationProperty Name="Language_1" Relationship="Quality_devModel.FK_TravelCard_Languages" FromRole="TravelCard" ToRole="Language" />
+          <Property Type="String" Name="TCBarCodeText" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_AdditionalProcessing_PartSetUp1">
+          <End Role="PartSetUp" Type="Quality_devModel.PartSetUp" Multiplicity="1" />
+          <End Role="AdditionalProcessing" Type="Quality_devModel.AdditionalProcessing" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PartSetUp">
+              <PropertyRef Name="PartSetUpID" />
+            </Principal>
+            <Dependent Role="AdditionalProcessing">
+              <PropertyRef Name="PartSetUpID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdditionalProcessingHeadings_AdditionalProcessing">
+          <End Role="AdditionalProcessing" Type="Quality_devModel.AdditionalProcessing" Multiplicity="1" />
+          <End Role="AdditionalProcessingHeadings" Type="Quality_devModel.AdditionalProcessingHeading" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AdditionalProcessing">
+              <PropertyRef Name="ProcessingID" />
+            </Principal>
+            <Dependent Role="AdditionalProcessingHeadings">
+              <PropertyRef Name="ProcessingID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PartSetUp_PartCategory">
+          <End Role="PartCategory" Type="Quality_devModel.PartCategory" Multiplicity="1" />
+          <End Role="PartSetUp" Type="Quality_devModel.PartSetUp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PartCategory">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="PartSetUp">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PartSpecification_PartSetUp1">
+          <End Role="PartSetUp" Type="Quality_devModel.PartSetUp" Multiplicity="1" />
+          <End Role="PartSpecification" Type="Quality_devModel.PartSpecification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PartSetUp">
+              <PropertyRef Name="PartSetUpID" />
+            </Principal>
+            <Dependent Role="PartSpecification">
+              <PropertyRef Name="PartSetUpID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TravelCard_PartSetUp1">
+          <End Role="PartSetUp" Type="Quality_devModel.PartSetUp" Multiplicity="1" />
+          <End Role="TravelCard" Type="Quality_devModel.TravelCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PartSetUp">
+              <PropertyRef Name="PartSetUpID" />
+            </Principal>
+            <Dependent Role="TravelCard">
+              <PropertyRef Name="PartSetUpID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PartSpecificationHeadings_PartSpecification">
+          <End Role="PartSpecification" Type="Quality_devModel.PartSpecification" Multiplicity="1" />
+          <End Role="PartSpecificationHeadings" Type="Quality_devModel.PartSpecificationHeading" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PartSpecification">
+              <PropertyRef Name="SpecificationID" />
+            </Principal>
+            <Dependent Role="PartSpecificationHeadings">
+              <PropertyRef Name="SpecificationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Frequency">
+          <Key>
+            <PropertyRef Name="FrequencyID" />
+          </Key>
+          <Property Type="Int16" Name="FrequencyID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Description_EN" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description_MX" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description_CN" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="String" Name="Notes" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LastEditBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PartSpecifications" Relationship="Quality_devModel.FK_PartSpecification_Frequency" FromRole="Frequency" ToRole="PartSpecification" />
+          <Property Type="DateTime" Name="LastEditDate" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MeasurementMethod">
+          <Key>
+            <PropertyRef Name="MeasurementMethodID" />
+          </Key>
+          <Property Type="Int16" Name="MeasurementMethodID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Description_EN" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description_MX" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description_CN" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="String" Name="Notes" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="LastEditDate" Nullable="false" />
+          <Property Type="String" Name="LastEditBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PartSpecifications" Relationship="Quality_devModel.FK_PartSpecification_MeasurementMethod" FromRole="MeasurementMethod" ToRole="PartSpecification" />
+        </EntityType>
+        <Association Name="FK_PartSpecification_Frequency">
+          <End Type="Quality_devModel.Frequency" Role="Frequency" Multiplicity="0..1" />
+          <End Type="Quality_devModel.PartSpecification" Role="PartSpecification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Frequency">
+              <PropertyRef Name="FrequencyID" />
+            </Principal>
+            <Dependent Role="PartSpecification">
+              <PropertyRef Name="FrequencyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PartSpecification_MeasurementMethod">
+          <End Type="Quality_devModel.MeasurementMethod" Role="MeasurementMethod" Multiplicity="0..1" />
+          <End Type="Quality_devModel.PartSpecification" Role="PartSpecification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MeasurementMethod">
+              <PropertyRef Name="MeasurementMethodID" />
+            </Principal>
+            <Dependent Role="PartSpecification">
+              <PropertyRef Name="MeasurementMethodID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Type="String" Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="principal_id" Nullable="false" />
+          <Property Type="Int32" Name="diagram_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="version" />
+          <Property Type="Binary" Name="definition" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Language">
+          <Key>
+            <PropertyRef Name="LanguageID" />
+          </Key>
+          <Property Type="String" Name="LanguageCode" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LanguageName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="Int16" Name="LanguageID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="UserSettings" Relationship="Quality_devModel.FK_UserSettings_Languages" FromRole="Language" ToRole="UserSetting" />
+          <NavigationProperty Name="TravelCards" Relationship="Quality_devModel.FK_TravelCard_Languages" FromRole="Language" ToRole="TravelCard" />
+        </EntityType>
+        <EntityType Name="Plant">
+          <Key>
+            <PropertyRef Name="PlantCodeID" />
+          </Key>
+          <Property Type="String" Name="PlantCode" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PlantName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="Int16" Name="PlantCodeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="UserSettings" Relationship="Quality_devModel.FK_UserSettings_Plant" FromRole="Plant" ToRole="UserSetting" />
+        </EntityType>
+        <EntityType Name="UserSetting">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Type="Int16" Name="LanguageID" Nullable="false" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="PlantCodeID" Nullable="false" />
+          <NavigationProperty Name="Plant" Relationship="Quality_devModel.FK_UserSettings_Plant" FromRole="UserSetting" ToRole="Plant" />
+          <NavigationProperty Name="Language" Relationship="Quality_devModel.FK_UserSettings_Languages" FromRole="UserSetting" ToRole="Language" />
+          <Property Type="Int16" Name="UserID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Log">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="Date" Nullable="false" />
+          <Property Type="String" Name="Thread" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Level" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Logger" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Message" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_UserSettings_Plant">
+          <End Type="Quality_devModel.Plant" Role="Plant" Multiplicity="1" />
+          <End Type="Quality_devModel.UserSetting" Role="UserSetting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Plant">
+              <PropertyRef Name="PlantCodeID" />
+            </Principal>
+            <Dependent Role="UserSetting">
+              <PropertyRef Name="PlantCodeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserSettings_Languages">
+          <End Type="Quality_devModel.Language" Role="Language" Multiplicity="1" />
+          <End Type="Quality_devModel.UserSetting" Role="UserSetting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="LanguageID" />
+            </Principal>
+            <Dependent Role="UserSetting">
+              <PropertyRef Name="LanguageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="MeasurementUnit">
+          <Key>
+            <PropertyRef Name="unitID" />
+          </Key>
+          <Property Type="Int16" Name="unitID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Abbreviation" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <NavigationProperty Name="MeasurementUnits1" Relationship="Quality_devModel.FK_MeasurementUnits_MeasurementUnits" FromRole="MeasurementUnit" ToRole="MeasurementUnit1" />
+          <NavigationProperty Name="MeasurementUnit1" Relationship="Quality_devModel.FK_MeasurementUnits_MeasurementUnits" FromRole="MeasurementUnit1" ToRole="MeasurementUnit" />
+          <NavigationProperty Name="PartSpecifications" Relationship="Quality_devModel.FK_PartSpecification_MeasurementUnits" FromRole="MeasurementUnit" ToRole="PartSpecification" />
+        </EntityType>
+        <Association Name="FK_MeasurementUnits_MeasurementUnits">
+          <End Type="Quality_devModel.MeasurementUnit" Role="MeasurementUnit" Multiplicity="1" />
+          <End Type="Quality_devModel.MeasurementUnit" Role="MeasurementUnit1" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="MeasurementUnit">
+              <PropertyRef Name="unitID" />
+            </Principal>
+            <Dependent Role="MeasurementUnit1">
+              <PropertyRef Name="unitID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PartSpecification_MeasurementUnits">
+          <End Type="Quality_devModel.MeasurementUnit" Role="MeasurementUnit" Multiplicity="0..1" />
+          <End Type="Quality_devModel.PartSpecification" Role="PartSpecification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MeasurementUnit">
+              <PropertyRef Name="unitID" />
+            </Principal>
+            <Dependent Role="PartSpecification">
+              <PropertyRef Name="unitID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TravelCard_Languages">
+          <End Type="Quality_devModel.Language" Role="Language" Multiplicity="1" />
+          <End Type="Quality_devModel.TravelCard" Role="TravelCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="LanguageID" />
+            </Principal>
+            <Dependent Role="TravelCard">
+              <PropertyRef Name="LanguageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TCBarCode">
+          <Key>
+            <PropertyRef Name="TCBarCodeID" />
+          </Key>
+          <Property Type="Int16" Name="TCBarCodeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int16" Name="PartSetUpID" Nullable="false" />
+          <Property Type="String" Name="BarCodeText" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="BarCodeFile" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PartSpecificationSequence">
+          <Key>
+            <PropertyRef Name="SequenceOrderID" />
+          </Key>
+          <Property Type="Int16" Name="SequenceOrder" Nullable="false" />
+          <Property Type="String" Name="SequenceText" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int16" Name="SequenceOrderID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Quality_devModelStoreContainer" CdmEntityContainer="Quality_devEntities">
+          <EntitySetMapping Name="AdditionalProcessings"><EntityTypeMapping TypeName="Quality_devModel.AdditionalProcessing"><MappingFragment StoreEntitySet="AdditionalProcessing">
+            <ScalarProperty Name="DescriptionCN" ColumnName="DescriptionCN" />
+                <ScalarProperty Name="DescriptionES" ColumnName="DescriptionES" />
+                <ScalarProperty Name="ProcessingID" ColumnName="ProcessingID" />
+            <ScalarProperty Name="PartSetUpID" ColumnName="PartSetUpID" />
+            <ScalarProperty Name="Notes" ColumnName="Notes" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+            <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+            <ScalarProperty Name="SequenceID" ColumnName="SequenceID" />
+            <ScalarProperty Name="LastEditDate" ColumnName="LastEditDate" />
+            <ScalarProperty Name="LastEditedBy" ColumnName="LastEditedBy" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="AdditionalProcessingHeadings"><EntityTypeMapping TypeName="Quality_devModel.AdditionalProcessingHeading"><MappingFragment StoreEntitySet="AdditionalProcessingHeadings">
+            <ScalarProperty Name="ProcessingHeadingID" ColumnName="ProcessingHeadingID" />
+            <ScalarProperty Name="ProcessingID" ColumnName="ProcessingID" />
+            <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+            <ScalarProperty Name="Text" ColumnName="Text" />
+            <ScalarProperty Name="LastEditedBy" ColumnName="LastEditedBy" />
+            <ScalarProperty Name="LastEditDate" ColumnName="LastEditDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="PartCategories"><EntityTypeMapping TypeName="Quality_devModel.PartCategory"><MappingFragment StoreEntitySet="PartCategory">
+            <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="LastEditDate" ColumnName="LastEditDate" />
+                <ScalarProperty Name="LastEditedBy" ColumnName="LastEditedBy" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="CategoryDescriptionCN" ColumnName="CategoryDescriptionCN" />
+                <ScalarProperty Name="CategoryNameCN" ColumnName="CategoryNameCN" />
+                <ScalarProperty Name="CategoryDescriptionES" ColumnName="CategoryDescriptionES" />
+                <ScalarProperty Name="CategoryNameES" ColumnName="CategoryNameES" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+            <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+            <ScalarProperty Name="CategoryDescription" ColumnName="CategoryDescription" />
+            <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="PartSetUp"><EntityTypeMapping TypeName="Quality_devModel.PartSetUp"><MappingFragment StoreEntitySet="PartSetUp">
+            <ScalarProperty Name="AdditionalFile" ColumnName="AdditionalFile" />
+                <ScalarProperty Name="DeviationFile2EndDte" ColumnName="DeviationFile2EndDte" />
+                <ScalarProperty Name="DeviationFile2StartDte" ColumnName="DeviationFile2StartDte" />
+                <ScalarProperty Name="DeviationFile2" ColumnName="DeviationFile2" />
+                <ScalarProperty Name="DeviationFileEndDte" ColumnName="DeviationFileEndDte" />
+                <ScalarProperty Name="DeviationFileStartDte" ColumnName="DeviationFileStartDte" />
+                <ScalarProperty Name="QualityAlert2EndDte" ColumnName="QualityAlert2EndDte" />
+                <ScalarProperty Name="QualityAlert2StartDte" ColumnName="QualityAlert2StartDte" />
+                <ScalarProperty Name="QualityAlert2" ColumnName="QualityAlert2" />
+                <ScalarProperty Name="QualityAlertEndDte" ColumnName="QualityAlertEndDte" />
+                <ScalarProperty Name="QualityAlertStartDte" ColumnName="QualityAlertStartDte" />
+                <ScalarProperty Name="PartRemarks" ColumnName="PartRemarks" />
+                <ScalarProperty Name="PartComment" ColumnName="PartComment" />
+                <ScalarProperty Name="RedLightGreenLightFile" ColumnName="RedLightGreenLightFile" />
+                <ScalarProperty Name="PackCode" ColumnName="PackCode" />
+                <ScalarProperty Name="DrawingNumber" ColumnName="DrawingNumber" />
+                <ScalarProperty Name="CommunicationNote" ColumnName="CommunicationNote" />
+                <ScalarProperty Name="DieSetUpFile" ColumnName="DieSetUpFile" />
+                <ScalarProperty Name="PartIsActive" ColumnName="PartIsActive" />
+                <ScalarProperty Name="QualityAlertFile" ColumnName="QualityAlertFile" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="PartSetUpID" ColumnName="PartSetUpID" />
+            <ScalarProperty Name="PartID" ColumnName="PartID" />
+            <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+            <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+            <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+            <ScalarProperty Name="DrawingFile" ColumnName="DrawingFile" />
+            <ScalarProperty Name="DeviationFile" ColumnName="DeviationFile" />
+            <ScalarProperty Name="Revision" ColumnName="Revision" />
+            <ScalarProperty Name="SetupDrawingFile" ColumnName="SetupDrawingFile" />
+            <ScalarProperty Name="HasQualityAlert" ColumnName="HasQualityAlert" />
+            <ScalarProperty Name="IsReleaseReady" ColumnName="IsReleaseReady" />
+            <ScalarProperty Name="LastApprovalDateTime" ColumnName="LastApprovalDateTime" />
+            <ScalarProperty Name="LastApprover" ColumnName="LastApprover" />
+            <ScalarProperty Name="LastEditDate" ColumnName="LastEditDate" />
+            <ScalarProperty Name="LastEditBy" ColumnName="LastEditBy" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="PartSpecifications"><EntityTypeMapping TypeName="Quality_devModel.PartSpecification"><MappingFragment StoreEntitySet="PartSpecification">
+                <ScalarProperty Name="GaugesCN" ColumnName="GaugesCN" />
+                <ScalarProperty Name="unitID" ColumnName="unitID" />
+                <ScalarProperty Name="CharacteristicCN" ColumnName="CharacteristicCN" />
+                <ScalarProperty Name="OperationCode" ColumnName="OperationCode" />
+                <ScalarProperty Name="MeasurementMethodID" ColumnName="MeasurementMethodID" />
+                <ScalarProperty Name="FrequencyID" ColumnName="FrequencyID" />
+                <ScalarProperty Name="GaugesES" ColumnName="GaugesES" />
+                <ScalarProperty Name="Gauges" ColumnName="Gauges" />
+                <ScalarProperty Name="SampleSizeES" ColumnName="SampleSizeES" />
+                <ScalarProperty Name="HighSpecES" ColumnName="HighSpecES" />
+                <ScalarProperty Name="LowSpecES" ColumnName="LowSpecES" />
+                <ScalarProperty Name="CharacteristicES" ColumnName="CharacteristicES" />
+                <ScalarProperty Name="IsDieSetUpCharcteristic" ColumnName="IsDieSetUpCharcteristic" />
+                <ScalarProperty Name="IsPartCharacteristic" ColumnName="IsPartCharacteristic" />
+                <ScalarProperty Name="IsMachineSetUpCharacteristic" ColumnName="IsMachineSetUpCharacteristic" />
+                <ScalarProperty Name="IsComponentCharacteristic" ColumnName="IsComponentCharacteristic" />
+                <ScalarProperty Name="SampleSize" ColumnName="SampleSize" />
+                <ScalarProperty Name="Characteristic" ColumnName="Characteristic" />
+                <ScalarProperty Name="SpecificationID" ColumnName="SpecificationID" />
+            <ScalarProperty Name="PartSetUpID" ColumnName="PartSetUpID" />
+            <ScalarProperty Name="SequenceID" ColumnName="SequenceID" />
+            <ScalarProperty Name="LowSpec" ColumnName="LowSpec" />
+            <ScalarProperty Name="HighSpec" ColumnName="HighSpec" />
+            <ScalarProperty Name="Notes" ColumnName="Notes" />
+            <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+            <ScalarProperty Name="LastEditDate" ColumnName="LastEditDate" />
+            <ScalarProperty Name="LastEditBy" ColumnName="LastEditBy" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="PartSpecificationHeadings"><EntityTypeMapping TypeName="Quality_devModel.PartSpecificationHeading"><MappingFragment StoreEntitySet="PartSpecificationHeadings">
+            <ScalarProperty Name="SpecificationHeadingID" ColumnName="SpecificationHeadingID" />
+            <ScalarProperty Name="SpecificationID" ColumnName="SpecificationID" />
+            <ScalarProperty Name="Text" ColumnName="Text" />
+            <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+            <ScalarProperty Name="LastEditedBy" ColumnName="LastEditedBy" />
+            <ScalarProperty Name="LastEditDate" ColumnName="LastEditDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="TravelCards"><EntityTypeMapping TypeName="Quality_devModel.TravelCard"><MappingFragment StoreEntitySet="TravelCard">
+                <ScalarProperty Name="TCBarCodeText" ColumnName="TCBarCodeText" />
+                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+                <ScalarProperty Name="OperationCode" ColumnName="OperationCode" />
+                <ScalarProperty Name="IsContinuationCard" ColumnName="IsContinuationCard" />
+                <ScalarProperty Name="IsDraft" ColumnName="IsDraft" />
+                <ScalarProperty Name="TCID" ColumnName="TCID" />
+            <ScalarProperty Name="PartSetUpID" ColumnName="PartSetUpID" />
+            <ScalarProperty Name="PrintDate" ColumnName="PrintDate" />
+            <ScalarProperty Name="PrintLocation" ColumnName="PrintLocation" />
+            <ScalarProperty Name="PrintedBy" ColumnName="PrintedBy" />
+            <ScalarProperty Name="Notes" ColumnName="Notes" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Frequencies">
+            <EntityTypeMapping TypeName="Quality_devModel.Frequency">
+              <MappingFragment StoreEntitySet="Frequency">
+                <ScalarProperty Name="LastEditDate" ColumnName="LastEditDate" />
+                <ScalarProperty Name="LastEditBy" ColumnName="LastEditBy" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Description_CN" ColumnName="Description_CN" />
+                <ScalarProperty Name="Description_MX" ColumnName="Description_MX" />
+                <ScalarProperty Name="Description_EN" ColumnName="Description_EN" />
+                <ScalarProperty Name="FrequencyID" ColumnName="FrequencyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MeasurementMethods">
+            <EntityTypeMapping TypeName="Quality_devModel.MeasurementMethod">
+              <MappingFragment StoreEntitySet="MeasurementMethod">
+                <ScalarProperty Name="LastEditBy" ColumnName="LastEditBy" />
+                <ScalarProperty Name="LastEditDate" ColumnName="LastEditDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Description_CN" ColumnName="Description_CN" />
+                <ScalarProperty Name="Description_MX" ColumnName="Description_MX" />
+                <ScalarProperty Name="Description_EN" ColumnName="Description_EN" />
+                <ScalarProperty Name="MeasurementMethodID" ColumnName="MeasurementMethodID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Quality_devModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Languages">
+            <EntityTypeMapping TypeName="Quality_devModel.Language">
+              <MappingFragment StoreEntitySet="Languages">
+                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="LanguageName" ColumnName="LanguageName" />
+                <ScalarProperty Name="LanguageCode" ColumnName="LanguageCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Plants">
+            <EntityTypeMapping TypeName="Quality_devModel.Plant">
+              <MappingFragment StoreEntitySet="Plant">
+                <ScalarProperty Name="PlantCodeID" ColumnName="PlantCodeID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="PlantName" ColumnName="PlantName" />
+                <ScalarProperty Name="PlantCode" ColumnName="PlantCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserSettings">
+            <EntityTypeMapping TypeName="Quality_devModel.UserSetting">
+              <MappingFragment StoreEntitySet="UserSettings">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="PlantCodeID" ColumnName="PlantCodeID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logs">
+            <EntityTypeMapping TypeName="Quality_devModel.Log">
+              <MappingFragment StoreEntitySet="Log">
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Logger" ColumnName="Logger" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="Thread" ColumnName="Thread" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MeasurementUnits">
+            <EntityTypeMapping TypeName="Quality_devModel.MeasurementUnit">
+              <MappingFragment StoreEntitySet="MeasurementUnits">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Abbreviation" ColumnName="Abbreviation" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="unitID" ColumnName="unitID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TCBarCodes">
+            <EntityTypeMapping TypeName="Quality_devModel.TCBarCode">
+              <MappingFragment StoreEntitySet="TCBarCode">
+                <ScalarProperty Name="BarCodeFile" ColumnName="BarCodeFile" />
+                <ScalarProperty Name="BarCodeText" ColumnName="BarCodeText" />
+                <ScalarProperty Name="PartSetUpID" ColumnName="PartSetUpID" />
+                <ScalarProperty Name="TCBarCodeID" ColumnName="TCBarCodeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PartSpecificationSequences">
+            <EntityTypeMapping TypeName="Quality_devModel.PartSpecificationSequence">
+              <MappingFragment StoreEntitySet="PartSpecificationSequence">
+                <ScalarProperty Name="SequenceOrderID" ColumnName="SequenceOrderID" />
+                <ScalarProperty Name="SequenceText" ColumnName="SequenceText" />
+                <ScalarProperty Name="SequenceOrder" ColumnName="SequenceOrder" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Quality" ZoomLevel="72">
+        <EntityTypeShape EntityType="Quality_devModel.AdditionalProcessing" Width="1.5" PointX="8.75" PointY="13.375" Height="3.3263964843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Quality_devModel.AdditionalProcessingHeading" Width="2" PointX="9.875" PointY="9.625" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="Quality_devModel.PartCategory" Width="3.625" PointX="0.5" PointY="9.125" Height="3.7109993489583317" IsExpanded="true" />
+        <EntityTypeShape EntityType="Quality_devModel.PartSetUp" Width="1.5" PointX="4.75" PointY="7.75" Height="6.5955208333333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="Quality_devModel.PartSpecification" Width="2.25" PointX="14" PointY="5.75" Height="7.1724251302083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="Quality_devModel.PartSpecificationHeading" Width="1.5" PointX="12.875" PointY="3.25" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="Quality_devModel.TravelCard" Width="1.5" PointX="7.875" PointY="6.25" Height="3.5186979166666674" IsExpanded="true" />
+        <AssociationConnector Association="Quality_devModel.FK_AdditionalProcessing_PartSetUp1" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.25" PointY="13.860260416666666" />
+          <ConnectorPoint PointX="8.75" PointY="13.860260416666666" />
+        </AssociationConnector>
+        <AssociationConnector Association="Quality_devModel.FK_AdditionalProcessingHeadings_AdditionalProcessing" ManuallyRouted="false">
+          <ConnectorPoint PointX="10.0625" PointY="13.375" />
+          <ConnectorPoint PointX="10.0625" PointY="11.989889322916667" />
+        </AssociationConnector>
+        <AssociationConnector Association="Quality_devModel.FK_PartSetUp_PartCategory" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.125" PointY="10.980499674479166" />
+          <ConnectorPoint PointX="4.75" PointY="10.980499674479166" />
+        </AssociationConnector>
+        <AssociationConnector Association="Quality_devModel.FK_PartSpecification_PartSetUp1" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.25" PointY="12.331779000651043" />
+          <ConnectorPoint PointX="9.9791666666666661" PointY="12.331779000651043" />
+          <ConnectorPoint PointX="10.145833333333334" PointY="12.331779000651043" />
+          <ConnectorPoint PointX="14" PointY="12.331779000651043" />
+        </AssociationConnector>
+        <AssociationConnector Association="Quality_devModel.FK_TravelCard_PartSetUp1" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.25" PointY="8.7593489583333337" />
+          <ConnectorPoint PointX="7.875" PointY="8.7593489583333337" />
+        </AssociationConnector>
+        <AssociationConnector Association="Quality_devModel.FK_PartSpecificationHeadings_PartSpecification" ManuallyRouted="false">
+          <ConnectorPoint PointX="14.1875" PointY="5.75" />
+          <ConnectorPoint PointX="14.1875" PointY="5.6148893229166674" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Quality_devModel.Frequency" Width="1.5" PointX="14" PointY="14" Height="3.1340950520833317" IsExpanded="true" />
+        <EntityTypeShape EntityType="Quality_devModel.MeasurementMethod" Width="1.5" PointX="10.125" PointY="6" Height="3.1340950520833317" />
+        <AssociationConnector Association="Quality_devModel.FK_PartSpecification_Frequency" >
+          <ConnectorPoint PointX="14.75" PointY="14" />
+          <ConnectorPoint PointX="14.75" PointY="12.922425130208332" />
+        </AssociationConnector>
+        <AssociationConnector Association="Quality_devModel.FK_PartSpecification_MeasurementMethod" >
+          <ConnectorPoint PointX="11.625" PointY="7.5670475260416659" />
+          <ConnectorPoint PointX="14" PointY="7.5670475260416659" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Quality_devModel.sysdiagram" Width="1.5" PointX="17.125" PointY="6.75" Height="1.9802864583333353" />
+        <EntityTypeShape EntityType="Quality_devModel.Language" Width="1.5" PointX="5" PointY="5.125" Height="2.1725878906249996" />
+        <EntityTypeShape EntityType="Quality_devModel.Plant" Width="1.5" PointX="7" PointY="3.375" Height="1.9802864583333353" />
+        <EntityTypeShape EntityType="Quality_devModel.UserSetting" Width="1.5" PointX="4.875" PointY="2.375" Height="2.1725878906249996" />
+        <EntityTypeShape EntityType="Quality_devModel.Log" Width="1.5" PointX="17" PointY="9.125" Height="2.1725878906250031" />
+        <AssociationConnector Association="Quality_devModel.FK_UserSettings_Plant" >
+          <ConnectorPoint PointX="7" PointY="3.9612939453125" />
+          <ConnectorPoint PointX="6.375" PointY="3.9612939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="Quality_devModel.FK_UserSettings_Languages" >
+          <ConnectorPoint PointX="5.6875" PointY="5.125" />
+          <ConnectorPoint PointX="5.6875" PointY="4.547587890625" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Quality_devModel.MeasurementUnit" Width="1.5" PointX="11.25" PointY="13.625" Height="2.3648893229166674" />
+        <AssociationConnector Association="Quality_devModel.FK_MeasurementUnits_MeasurementUnits" >
+          <ConnectorPoint PointX="11.781923076923077" PointY="15.989889322916667" />
+          <ConnectorPoint PointX="11.781923076923077" PointY="16.239889322916667" />
+          <ConnectorPoint PointX="12.228461538461538" PointY="16.239889322916667" />
+          <ConnectorPoint PointX="12.228461538461538" PointY="15.989889322916667" />
+        </AssociationConnector>
+        <AssociationConnector Association="Quality_devModel.FK_PartSpecification_MeasurementUnits" >
+          <ConnectorPoint PointX="12.34375" PointY="13.625" />
+          <ConnectorPoint PointX="12.34375" PointY="12.736168678385416" />
+          <ConnectorPoint PointX="14" PointY="12.736168678385416" />
+        </AssociationConnector>
+        <AssociationConnector Association="Quality_devModel.FK_TravelCard_Languages" >
+          <ConnectorPoint PointX="6.5" PointY="6.7737939453125" />
+          <ConnectorPoint PointX="7.875" PointY="6.7737939453125" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Quality_devModel.TCBarCode" Width="1.5" PointX="9" PointY="3.375" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="Quality_devModel.PartSpecificationSequence" Width="1.5" PointX="11" PointY="3.625" Height="1.6156835937499992" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

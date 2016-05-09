@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2F8C6273-F5BD-4D9B-AEDB-82204FB6625D}</ProjectGuid>
+    <ProjectTypeGuids>{F85E285D-A4E0-4152-9332-AB1D724D3325};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Quality</RootNamespace>
+    <AssemblyName>TravelCard</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <UseIISExpress>true</UseIISExpress>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PackageAsSingleFile>false</PackageAsSingleFile>
+    <DesktopBuildPackageLocation>
+    </DesktopBuildPackageLocation>
+    <PublishDatabases>false</PublishDatabases>
+    <DeployIisAppPath>
+    </DeployIisAppPath>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+    <ExcludeApp_Data>false</ExcludeApp_Data>
+    <ExcludeGeneratedDebugSymbol>false</ExcludeGeneratedDebugSymbol>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Elmah, Version=1.1.11517.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Users\dtinsley\Desktop\elmah\bin\net-2.0\Release\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="ephtmltopdf">
+      <HintPath>..\..\..\Users\dtinsley\Desktop\expertPDF-HtmlToPDF\HtmlToPdf\Bin\ephtmltopdf.dll</HintPath>
+    </Reference>
+    <Reference Include="IBM.Data.DB2.iSeries, Version=12.0.0.0, Culture=neutral, PublicKeyToken=9cdb2ebfb1f93a26, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Ideal.DomainModel\bin\Debug\IBM.Data.DB2.iSeries.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\Users\dtinsley\Desktop\log4net\Sample\bin\Debug\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=2.1.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Users\dtinsley\Desktop\nHibernateMvcExp\part2\NHibernate101-Part-02\NHibernate101\Core\bin\Debug\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle, Version=2.1.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Users\dtinsley\Desktop\nHibernateMvcExp\part2\NHibernate101-Part-02\NHibernate101\Infrastructure\bin\Debug\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=2.1.0.76, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Users\dtinsley\Desktop\projects\SurveyTracker\QRM.SurveyTracker.WebUI\bin\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfViewerAspNet">
+      <HintPath>..\..\..\Users\dtinsley\Desktop\XpertPDFViewer\PdfViewerAspNet\Bin\PdfViewerAspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <HintPath>..\..\..\..\..\..\..\Projects\SurveyTracker\QRM.SurveyTracker.DomainModel\bin\Debug\System.ComponentModel.DataAnnotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+      <HintPath>..\..\..\..\..\..\..\Projects\SurveyTracker\QRM.SurveyTracker.DomainModel\bin\Debug\System.Runtime.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="wnvhtmlconvert">
+      <HintPath>..\..\..\Users\dtinsley\Desktop\projects\SurveyTracker\QRM.SurveyTracker.WebUI\bin\wnvhtmlconvert.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BarCodeHelpers\Code39BarCode.cs" />
+    <Compile Include="BarCodeHelpers\ControllerExtensions.cs" />
+    <Compile Include="BarCodeHelpers\ImageResult.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdditionalProcessesController.cs" />
+    <Compile Include="Controllers\BarCodeController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\FrequencyController.cs" />
+    <Compile Include="Controllers\MeasurementMethodController.cs" />
+    <Compile Include="infrastructure\PartCategoryController.cs" />
+    <Compile Include="Controllers\PartSetUpController.cs" />
+    <Compile Include="Controllers\PartSpecificationController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
+    <Compile Include="Controllers\TravelCardController.cs" />
+    <Compile Include="Controllers\UserProfileController.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Extensions\ConvertAS400Dates.cs" />
+    <Compile Include="Extensions\HttpRequestExtensions.cs" />
+    <Compile Include="Extensions\VersionHelper.cs" />
+    <Compile Include="GenerateDocs\ExcelOutPut.cs" />
+    <Compile Include="GenerateDocs\PdfResult.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="infrastructure\NinjectControllerFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Strings.es-MX.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.es-MX.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\AdditionalProcessingViewModel.cs" />
+    <Compile Include="ViewModels\BarCodeViewModel.cs" />
+    <Compile Include="ViewModels\Exceptions\ScopeNotSelectedException.cs" />
+    <Compile Include="ViewModels\FrequencyViewModel.cs" />
+    <Compile Include="ViewModels\MeasurementMethodViewModel.cs" />
+    <Compile Include="ViewModels\PartCategoryViewModel.cs" />
+    <Compile Include="ViewModels\PartSetUpViewModel.cs" />
+    <Compile Include="ViewModels\PartSpecificationViewModel.cs" />
+    <Compile Include="ViewModels\TravelCardPrintViewModel.cs" />
+    <Compile Include="ViewModels\TravelCardViewModel.cs" />
+    <Compile Include="ViewModels\UserProfileViewModel.cs" />
+    <Compile Include="Views\Shared\TravelCard.Master.cs">
+      <DependentUpon>TravelCard.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\TravelCard.Master.designer.cs">
+      <DependentUpon>TravelCard.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\WPF.Master.cs">
+      <DependentUpon>WPF.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\WPF.Master.designer.cs">
+      <DependentUpon>WPF.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\fg.menu.css" />
+    <Content Include="Content\images\close_help_icon.png" />
+    <Content Include="Content\images\helpIcon.jpg" />
+    <Content Include="Content\images\ideallogo.gif" />
+    <Content Include="Content\images\Ideal_TridonLogo.jpg" />
+    <Content Include="Content\images\loading-bars.gif" />
+    <Content Include="Content\images\loading.gif" />
+    <Content Include="Content\images\notepad.png" />
+    <Content Include="Content\images\pdf.gif" />
+    <Content Include="Content\jquery-1.4.1.min.js" />
+    <Content Include="Content\images\spinner_bar.gif" />
+    <Content Include="Content\images\table-sorter\asc.gif" />
+    <Content Include="Content\images\table-sorter\bg.gif" />
+    <Content Include="Content\images\table-sorter\desc.gif" />
+    <Content Include="Content\jquery-1.3.2.js" />
+    <Content Include="Content\jquery-ui-1.8.custom.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="FileNotFound.htm" />
+    <Content Include="NoAccess.aspx" />
+    <Content Include="Scripts\jquery.showLoading.min.js" />
+    <Content Include="Scripts\jquery.tablesorter.min.js" />
+    <Content Include="Scripts\jquery.ui.core.js" />
+    <Content Include="Scripts\jquery.ui.datepicker.js" />
+    <Content Include="Scripts\Quality.js" />
+    <Content Include="Scripts\theme\images\ui-bg_diagonals-small_100_f0efea_40x40.png" />
+    <Content Include="Scripts\theme\images\ui-bg_flat_35_f0f0f0_40x100.png" />
+    <Content Include="Scripts\theme\images\ui-bg_glass_55_fcf0ba_1x400.png" />
+    <Content Include="Scripts\theme\images\ui-bg_glow-ball_25_2e2e28_600x600.png" />
+    <Content Include="Scripts\theme\images\ui-bg_highlight-soft_100_f0efea_1x100.png" />
+    <Content Include="Scripts\theme\images\ui-bg_highlight-soft_25_327E04_1x100.png" />
+    <Content Include="Scripts\theme\images\ui-bg_highlight-soft_25_5A9D1A_1x100.png" />
+    <Content Include="Scripts\theme\images\ui-bg_highlight-soft_95_ffedad_1x100.png" />
+    <Content Include="Scripts\theme\images\ui-bg_inset-soft_22_3b3b35_1x100.png" />
+    <Content Include="Scripts\theme\images\ui-icons_808080_256x240.png" />
+    <Content Include="Scripts\theme\images\ui-icons_8DC262_256x240.png" />
+    <Content Include="Scripts\theme\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Scripts\theme\images\ui-icons_e7e6e4_256x240.png" />
+    <Content Include="Scripts\theme\images\ui-icons_eeeeee_256x240.png" />
+    <Content Include="Scripts\theme\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Scripts\theme\ui.accordion.css" />
+    <Content Include="Scripts\theme\ui.all.css" />
+    <Content Include="Scripts\theme\ui.base.css" />
+    <Content Include="Scripts\theme\ui.core.css" />
+    <Content Include="Scripts\theme\ui.datepicker.css" />
+    <Content Include="Scripts\theme\ui.dialog.css" />
+    <Content Include="Scripts\theme\ui.progressbar.css" />
+    <Content Include="Scripts\theme\ui.resizable.css" />
+    <Content Include="Scripts\theme\ui.slider.css" />
+    <Content Include="Scripts\theme\ui.tabs.css" />
+    <Content Include="Scripts\theme\ui.theme.css" />
+    <Content Include="Content\ui.all.css" />
+    <Content Include="Content\ui.base.css" />
+    <Content Include="Content\ui.core.css" />
+    <Content Include="Content\ui.datepicker.css" />
+    <Content Include="Content\ui.theme.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\fg.menu.css" />
+    <Content Include="Scripts\fg.menu.js" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery-1.6.2.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.custom.css" />
+    <Content Include="Scripts\JQuery.Color.js" />
+    <Content Include="Scripts\jquery.dialogBox.js" />
+    <Content Include="Scripts\jquery.download.js" />
+    <Content Include="Scripts\jquery.tipsy.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="log4net.config" />
+    <None Include="Scripts\qualityApp.js_old" />
+    <Content Include="Scripts\tipsy.css" />
+    <Content Include="Views\AdditionalProcesses\AdditionalProcessDetails.ascx" />
+    <Content Include="Views\AdditionalProcesses\AdditionalProcessesEdit.aspx" />
+    <Content Include="Views\AdditionalProcesses\AdditionalProcessessCreate.aspx" />
+    <Content Include="Views\AdditionalProcesses\CloneAdditionalProcesses.aspx" />
+    <Content Include="Views\AdditionalProcesses\PickAdditionalProcessestoClone.aspx" />
+    <Content Include="Views\BarCode\BarCodeDisplay.ascx" />
+    <Content Include="Views\BarCode\TCBarCodeDisplay.ascx" />
+    <Content Include="Views\Frequency\FrequencyCreate.aspx" />
+    <Content Include="Views\Frequency\FrequencyEdit.aspx" />
+    <Content Include="Views\Frequency\FrequencyMaintenance.aspx" />
+    <Content Include="Views\MeasurementMethod\MeasurementMethodCreate.aspx" />
+    <Content Include="Views\MeasurementMethod\MeasurementMethodEdit.aspx" />
+    <Content Include="Views\MeasurementMethod\MeasurementMethodMaintenance.aspx" />
+    <Content Include="Views\PartCategory\PartCategoryCreate.aspx" />
+    <Content Include="Views\PartCategory\PartCategoryEdit.aspx" />
+    <Content Include="Views\PartCategory\PartCategoryMaintenance.aspx" />
+    <Content Include="Views\PartSetUp\GetAdditionalFile.aspx" />
+    <Content Include="Views\PartSetUp\GetDeviationFile.aspx" />
+    <Content Include="Views\PartSetUp\GetDeviationFile2.aspx" />
+    <Content Include="Views\PartSetUp\GetDieSetUpFile.aspx" />
+    <Content Include="Views\PartSetUp\GetDrawingFile.aspx" />
+    <Content Include="Views\PartSetUp\GetGreenLightRedLightFile.aspx" />
+    <Content Include="Views\PartSetUp\GetQualityAlertFile.aspx" />
+    <Content Include="Views\PartSetUp\GetQualityAlertFile2.aspx" />
+    <Content Include="Views\PartSetUp\GetSetUpInstructionsFile.aspx" />
+    <Content Include="Views\PartSetUp\PartSetUpCreate.aspx" />
+    <Content Include="Views\PartSetUp\PartSetUpGlobalDeviation2FileEditor.aspx" />
+    <Content Include="Views\PartSetUp\PartSetUpGlobalDeviationFileEditor.aspx" />
+    <Content Include="Views\PartSetUp\PartSetUpGlobalDrawingFileEditor.aspx" />
+    <Content Include="Views\PartSetUp\PartSetUpGlobalQualityAlertFile2Editor.aspx" />
+    <Content Include="Views\PartSetUp\PartSetUpGlobalQualityAlertFileEditor.aspx" />
+    <Content Include="Views\PartSetUp\PartSetUpGlobalReleaseReadyEditor.aspx" />
+    <Content Include="Views\PartSetUp\PartSetUpGlobalRemarkEditor.aspx" />
+    <Content Include="Views\PartSetUp\PartSetUpListing.aspx" />
+    <Content Include="Views\PartSetUp\PartSetUpSearch.aspx" />
+    <Content Include="Views\PartSpecification\SetSpecificationSequenceOrder.aspx" />
+    <Content Include="Views\PartSpecification\ClonePartSpecifications.aspx" />
+    <Content Include="Views\PartSpecification\PickPartSpecificationstoClone.aspx" />
+    <Content Include="Views\Reports\DisplayOutPuttedPDF.ascx" />
+    <Content Include="Views\Reports\Showpdf.aspx" />
+    <Content Include="Views\Shared\TravelCard.Master" />
+    <Content Include="Views\PartSetUp\PartSetUpDetails.ascx" />
+    <Content Include="Views\PartSetUp\PartSetUpEdit.aspx" />
+    <Content Include="Views\PartSpecification\PartSpecificationCreate.aspx" />
+    <Content Include="Views\PartSpecification\PartSpecificationDetails.ascx" />
+    <Content Include="Views\PartSpecification\PartSpecificationEdit.aspx" />
+    <Content Include="Views\TravelCard\Imprimir_Tarjeta_de_Viaje_MX.aspx" />
+    <Content Include="Views\TravelCard\PartMaintenanceIndex.aspx" />
+    <Content Include="Views\TravelCard\PartSearch.aspx" />
+    <Content Include="Views\TravelCard\PrintTravelCard_US.aspx" />
+    <Content Include="Views\TravelCard\SpanishCardSearch.aspx" />
+    <Content Include="Views\TravelCard\TravelCard.aspx" />
+    <Content Include="Views\TravelCard\TravelCardPrint.aspx" />
+    <Content Include="Views\UserProfile\Menubar.ascx" />
+    <Content Include="Views\UserProfile\SelectPlant.aspx" />
+    <Content Include="Views\UserProfile\UserHeadline.ascx" />
+    <Content Include="Views\UserProfile\UserListing.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Scripts\jquery-1.3.2.js" />
+    <Content Include="Scripts\jquery-1.3.2.min.js" />
+    <Content Include="Scripts\jquery-1.3.2-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.3.2.min-vsdoc.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Views\Home\About.aspx" />
+    <Content Include="Views\TravelCard\Index.aspx" />
+    <Content Include="Views\Shared\Error.aspx" />
+    <Content Include="Views\PartSpecification\LogOnUserControl.ascx" />
+    <Content Include="Views\Shared\Site.Master" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.ConfigProd\WebProd.config" />
+    <Content Include="Web.ConfigTest\WebTest.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ideal.DomainModel\Ideal.DomainModel.csproj">
+      <Project>{7EDA474C-5988-4194-AAB4-B29E4A5CB1CB}</Project>
+      <Name>Ideal.DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\IdealData.Infrastructure.csproj">
+      <Project>{87E5AB1A-ED8C-4BBD-922E-82533F80CEA5}</Project>
+      <Name>IdealData.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TravelCard.DomainModel\TravelCard.DomainModel.csproj">
+      <Project>{77B30D0E-E0DD-4908-9C1E-B92B1F922714}</Project>
+      <Name>TravelCard.DomainModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Attributes\" />
+    <Folder Include="UserProfile\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\theme\.DS_Store" />
+    <Content Include="Views\Shared\WPF.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Strings.es-MX.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.es-MX.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Strings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)\..\$(ProjectName)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62259</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:53852/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

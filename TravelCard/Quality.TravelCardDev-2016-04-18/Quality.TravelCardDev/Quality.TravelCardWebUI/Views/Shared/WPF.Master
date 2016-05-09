@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+
+	<link href="http://tn-sqldevel:9777/content/site.css" rel="stylesheet" type="text/css" />
+
+ 
+
+			   
+	 <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+
+	<asp:ContentPlaceHolder ID="HeadContent" runat="server"> 
+
+  </asp:ContentPlaceHolder>
+</head>
+<body >
+
+
+		   
+
+	  
+   
+			<asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            
+
+		
+
+			
+ 
+</body>
+</html>

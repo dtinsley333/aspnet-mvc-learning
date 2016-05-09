@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="TravelCard.DomainModel.Entities" assembly="TravelCard.DomainModel">
+
+  <class name="PartSetup" table="PartSetUp" dynamic-update="false">
+    <cache usage="read-write"/>
+    <id name="Id" column="PartSetUpID" type="smallint">
+      <generator class="uuid.smallint"/>
+    </id>
+    <property name="PartID" type="varchar(50)"/>
+    <property name="CategoryID" type="smallint"/>
+    <property name="CreatedBy" type="varchar(50)"/>
+    <property name="CreateDate" type="smalldatetime"/>
+    <property name="DrawingFile" type="varchar(150)"/>
+    <property name="DeviationFile" type="varchar(150)"/>
+    <property name="Revision" type="varchar(50)"/>
+    <property name="SetUpDrawingFile" type="varchar(150)"/>
+    <property name="IsReleaseReady" type="bit"/>
+    <property name="HasQualiltyAlert" type="bit"/>
+    <property name="LastApprovalDateTime" type="smalldatetime"/>
+    <property name="LastApprover" type="varchar(50)"/>
+    <property name="LastEditDate" type="smalldatetime"/>
+    <property name="LastEditedBy" type="varchar(50)"/>
+    
+    
+
+
+  </class>
+</hibernate-mapping>

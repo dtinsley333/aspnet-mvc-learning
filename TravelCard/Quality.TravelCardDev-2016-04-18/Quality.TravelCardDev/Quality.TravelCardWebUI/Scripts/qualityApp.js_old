@@ -1,0 +1,79 @@
+﻿
+
+$(".hide-parent-link").live("click", function () {
+    $(this).parent().parent().remove();
+});
+
+$(".delete-record").live("click", function () {
+    $(this).parent().parent().css("color", "red");
+    if (confirm("Are you sure you want to delete this row?")) {
+        return true;
+    }
+    else {
+        $(this).parent().parent().css("color", "black")
+        return false;
+    }
+});
+
+$('.fg-button')
+    .live("onmouseover", function () { $(this).removeClass('ui-state-default').addClass('ui-state-focus'); })
+    .live("onmouseout", function () { $(this).removeClass('ui-state-focus').addClass('ui-state-default') });
+
+$('textarea[maxlength]').live("keyup focus click paste drop", function () {
+    var max = parseInt($(this).attr('maxlength'));
+    if ($(this).val().length > max) {
+        $(this).val($(this).val().substr(0, $(this).attr('maxlength')));
+    }
+
+    var remaining = (max - $(this).val().length);
+
+    var remainingCountElementID = this.id + "_RemainingCount";
+
+    var $RemainingCountElement = $("#" + remainingCountElementID);
+
+    var message = remaining + " of " + max + " remaining";
+
+    if ($RemainingCountElement.length > 0) {
+        $RemainingCountElement.html(message);
+        if ($RemainingCountElement.css("display") == "none") {
+            $RemainingCountElement.slideDown();
+        }
+    } else {
+        $(this).before("<span style='display:none;' id='" + remainingCountElementID + "' class='remaining-character-count'>" + message + "</span>");
+        $RemainingCountElement.slideDown();
+    }
+
+    if (remaining <= (max * .05))
+        $RemainingCountElement.css("color", "red");
+    else
+        $RemainingCountElement.css("color", "#494949"); /* dark grey */
+});
+
+$('textarea[maxlength]').live("blur", function () {
+    var remainingCountElementID = this.id + "_RemainingCount";
+    $("#" + remainingCountElementID).slideUp();
+});
+
+
+
+$.keepalive({
+    //sessionLength : 5,
+    //warningLength : 20,
+    keepAliveUrl: '<%= Url.Action("KeepAlive","Home") %>',
+    logoutUrl: '<%= Url.Action("Timeout","Home") %>'
+});
+
+
+
+$(document).ready(function () {
+    $(".first-focus").first().focus();
+    $(".integer").attr("maxlength", 5);
+    $.qualityApp.applyMasksToDataFields();
+    $.qualityApp.setupDateFields();
+    $.qualityApp.formatTables();
+    $.qualityApp.reformatTables();
+    if (shouldShowMessage == true) {
+        showMessage($.qualityApp.messageToShow);
+    }
+});
+

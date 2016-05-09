@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="Ideal.DomainModel.Entities" assembly="Ideal.DomainModel">
+  <class name="Part" table="DCSCIM" dynamic-update="false">
+    <cache usage="read-write"/>
+    <id name="Id" column="ITMID" type="String">
+      <generator class="uuid.string"/>
+    </id>
+    <property name="ITMDESC"/>
+    <property name="ALTDESC"/>
+    <property name="DTECRT"/>
+  </class>
+</hibernate-mapping>

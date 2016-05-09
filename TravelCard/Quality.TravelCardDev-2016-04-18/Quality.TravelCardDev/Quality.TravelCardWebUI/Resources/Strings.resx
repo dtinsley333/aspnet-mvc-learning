@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdditionalProcesses" xml:space="preserve">
+    <value>Next Process</value>
+  </data>
+  <data name="AdminFunctions" xml:space="preserve">
+    <value>Maintenance Functions</value>
+  </data>
+  <data name="AMPM" xml:space="preserve">
+    <value>AM/PM</value>
+  </data>
+  <data name="AppTitle" xml:space="preserve">
+    <value>Ideal Quality Application</value>
+  </data>
+  <data name="AssemblyWONumber" xml:space="preserve">
+    <value>ASSEMBLY WO#</value>
+  </data>
+  <data name="BuildingCardPleaseWait" xml:space="preserve">
+    <value>Building Travel Card Please Wait......</value>
+  </data>
+  <data name="Characteristic" xml:space="preserve">
+    <value>Characteristic</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Comments</value>
+  </data>
+  <data name="ComponentPart" xml:space="preserve">
+    <value>Comp. Part #</value>
+  </data>
+  <data name="CopyWrite" xml:space="preserve">
+    <value>© Ideal Clamp Products, All rights reserved.
+This program is the confidential and proprietary intellectual property of Ideal Clamp Products. Any unauthorized use, reproduction, or preparation of derivative software represented by this program is strictly prohibited.</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="DrawingNumber" xml:space="preserve">
+    <value>Setup TC# DRG#</value>
+  </data>
+  <data name="DueDate" xml:space="preserve">
+    <value>DUE DATE</value>
+  </data>
+  <data name="Gage" xml:space="preserve">
+    <value>Gage</value>
+  </data>
+  <data name="HighSpec" xml:space="preserve">
+    <value>High Spec.</value>
+  </data>
+  <data name="IfAudited" xml:space="preserve">
+    <value>IF AUDITED PLACE&lt;br /&gt; AUDIT STICKER HERE.</value>
+  </data>
+  <data name="IfRejected" xml:space="preserve">
+    <value>RID # IF REJECTED</value>
+  </data>
+  <data name="InspectionSignOff" xml:space="preserve">
+    <value>I have performed and approved the final inspection and the operator manufacturing instructions.</value>
+  </data>
+  <data name="LowSpec" xml:space="preserve">
+    <value>Low Spec.</value>
+  </data>
+  <data name="Machine" xml:space="preserve">
+    <value>Machine</value>
+  </data>
+  <data name="MeasurmentTool" xml:space="preserve">
+    <value>Method</value>
+  </data>
+  <data name="NumberOfCards" xml:space="preserve">
+    <value>Number of Continuation Travel Cards</value>
+  </data>
+  <data name="Operator" xml:space="preserve">
+    <value>Operator</value>
+  </data>
+  <data name="PackCodeNumber" xml:space="preserve">
+    <value>PACK CODE </value>
+  </data>
+  <data name="PartNumber" xml:space="preserve">
+    <value>PART </value>
+  </data>
+  <data name="PartSearch" xml:space="preserve">
+    <value>Part Search</value>
+  </data>
+  <data name="PartSetUp" xml:space="preserve">
+    <value>Part Set Up</value>
+  </data>
+  <data name="PickUpDriver" xml:space="preserve">
+    <value>PICK UP DRIVER'S SIGNATURE</value>
+  </data>
+  <data name="PONum" xml:space="preserve">
+    <value>P.O.#</value>
+  </data>
+  <data name="PrintTravelCard" xml:space="preserve">
+    <value>Print OMI</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="Revision" xml:space="preserve">
+    <value>Rev.</value>
+  </data>
+  <data name="Roles" xml:space="preserve">
+    <value>Role(s)</value>
+  </data>
+  <data name="SampleSz" xml:space="preserve">
+    <value>Smple&lt;br /&gt;Sz</value>
+    <comment>break added to make the column more narrow</comment>
+  </data>
+  <data name="SavedSuccessfully" xml:space="preserve">
+    <value>Saved Successfully</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SearchPartSetUps" xml:space="preserve">
+    <value>Search by Product ID</value>
+  </data>
+  <data name="SearchTravelCardByPartNum" xml:space="preserve">
+    <value>Search for Travel Card by Item ID</value>
+  </data>
+  <data name="SetUp" xml:space="preserve">
+    <value>Set Up</value>
+  </data>
+  <data name="Supplier" xml:space="preserve">
+    <value>SUPPLIER</value>
+  </data>
+  <data name="SupplierCertification" xml:space="preserve">
+    <value>SUPPLIER CERTIFICATION</value>
+  </data>
+  <data name="TestCriteria" xml:space="preserve">
+    <value>Internal Process Control Plan Data Sheet</value>
+  </data>
+  <data name="Tote" xml:space="preserve">
+    <value>Tote #</value>
+  </data>
+  <data name="TravelCard" xml:space="preserve">
+    <value>Travel Card</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="UserListing" xml:space="preserve">
+    <value>Travel Card  User Listing</value>
+  </data>
+  <data name="Weight" xml:space="preserve">
+    <value>WEIGHT</value>
+  </data>
+  <data name="Coil" xml:space="preserve">
+    <value>COIL</value>
+  </data>
+  <data name="ComponentHeat" xml:space="preserve">
+    <value>Comp. Heat</value>
+  </data>
+  <data name="ComponentOMI" xml:space="preserve">
+    <value>Comp. Travel Card</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Draft" xml:space="preserve">
+    <value>DRAFT</value>
+  </data>
+  <data name="Frequency" xml:space="preserve">
+    <value>Frequency</value>
+  </data>
+  <data name="Heat" xml:space="preserve">
+    <value>HEAT</value>
+  </data>
+  <data name="OMI" xml:space="preserve">
+    <value>Travel Card</value>
+  </data>
+  <data name="OMIPreview" xml:space="preserve">
+    <value>Travel Card Preview</value>
+  </data>
+  <data name="RawMaterial" xml:space="preserve">
+    <value>RAW MAT'L</value>
+  </data>
+  <data name="ReturnToApp" xml:space="preserve">
+    <value>Done, Return to OMI Application</value>
+  </data>
+  <data name="SecondOMI" xml:space="preserve">
+    <value>2nd Travel Card</value>
+  </data>
+  <data name="PartNumPlease" xml:space="preserve">
+    <value>Please enter a part number</value>
+  </data>
+  <data name="CreateOMI" xml:space="preserve">
+    <value>Build Travel Card</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel/Close</value>
+  </data>
+  <data name="OperationCode" xml:space="preserve">
+    <value>Operation Code</value>
+  </data>
+  <data name="BarCodeNumber" xml:space="preserve">
+    <value>License Plate</value>
+  </data>
+  <data name="ClickToHide" xml:space="preserve">
+    <value>Click to Hide</value>
+  </data>
+  <data name="HidePreviousOMIList" xml:space="preserve">
+    <value>If a previous Travel is not selected a new Travel Card will be created</value>
+  </data>
+  <data name="ShowPreviousOMIList" xml:space="preserve">
+    <value>Select from recent Travel cards for this part</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="Remarks" xml:space="preserve">
+    <value>Remarks</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="ContinuationTravelCard" xml:space="preserve">
+    <value>Continuation Travel Card</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>Please Wait</value>
+  </data>
+</root>

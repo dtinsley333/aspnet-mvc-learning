@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="Ideal.DomainModel.Entities" assembly="Ideal.DomainModel">
+  <class name="Component" table="DMFPSMR" dynamic-update="false">
+    <cache usage="read-write"/>
+    <id name="Id" column="ITMID" type="String">
+      <generator class="uuid.string"/>
+    </id>
+    <property name="PRTID" column="PRTID" type="String" length="100" />
+    <property name="PRTPLT" column="PRTPLT" type="String" length="100"  />
+    <property name="PLT" column="PLT" type="String" length="100" />
+    <property name="USGRAT" column="USGRAT" type="String" length="100" />
+    <property name="BEGEFF" column="BEGEFF" type="Decimal" length="100" />
+    <property name="ENDEFF" column="ENDEFF" type="Decimal" length="100" />
+    <join table="DCSCIM">
+      <key column="ITMID"/>
+      <property name="ITMDESC" column="ITMDESC" type="String" length="200"/>
+
+
+    </join>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,12 @@
+﻿<hibernate-configuration xmlns="urn:nhibernate-configuration-2.2">
+  <session-factory>
+    <property name="connection.provider"> NHibernate.Connection.DriverConnectionProvider</property>
+    <property name="dialect">NHibernate.Dialect.DB2400Dialect</property>
+    <property name="proxyfactory.factory_class">NHibernate.ByteCode.Castle.ProxyFactoryFactory, NHibernate.ByteCode.Castle</property>
+    <property name="connection.connection_string">DataSource=IDEAL400;userId=smy;password=smy;LibraryList=*USRLIBL;Naming=System</property>
+    <property name="use_outer_join">true</property>
+    <property name="query.substitutions"> true 1, false 0, yes 'Y', no 'N'</property>
+    <property name="show_sql">true</property>
+    <mapping assembly="IdealData.Infrastructure" />
+  </session-factory>
+</hibernate-configuration>

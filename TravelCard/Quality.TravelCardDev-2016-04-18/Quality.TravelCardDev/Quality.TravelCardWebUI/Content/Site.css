@@ -1,0 +1,782 @@
+﻿
+
+
+
+/*------------------------------------- Help Details Header----------------------------*/
+
+
+
+
+.close-icon{
+    background-image:url(http://tn-sqldevel:9777/content/images/close_help_icon.png);
+    background-repeat:no-repeat; 
+     background-position :top right;
+     height:21px;
+     width:21px;
+    display:inline-block;
+   position:relative;
+   left:700px;
+   cursor:default;
+   
+}
+
+
+
+
+
+.help-icon
+{
+	
+    background-image:url(http://tn-sqldevel:9777/content/images/helpIcon.jpg);
+    background-repeat:no-repeat; 
+    background-position :top right;
+    height:21px;
+    width:21px;
+    display:inline-block;
+    margin-right:2px;
+}
+
+.helpdetailsheader
+{
+    font-weight:normal;
+	font-family:bold 1em "Arial Narrow", "Franklin Gothic", Arial;
+	color:Black;
+    padding:3px;
+    background-color:#ffffff; /* light gray*/
+    margin-top:1px; 
+    cursor :help;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body
+{
+	background-color:#ffffff;
+	font-size: .75em;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	margin: 10;
+	padding: 0;
+	color: #000000;
+}
+
+a:link
+{
+	color: #034af3;
+	text-decoration: underline;
+}
+a:visited
+{
+	color: #505abc;
+}
+a:hover
+{
+	color: #1d60ff;
+	text-decoration: none;
+}
+a:active
+{
+	color: #12eb87;
+}
+
+p, ul
+{
+	margin-bottom: 20px;
+	line-height: 1.6em;
+}
+
+/* HEADINGS   
+----------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6
+{
+	font-size: 1.5em;
+	color: #000;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+h1
+{
+	font-size: 2em;
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+h2
+{
+	padding: 0 0 10px 0;
+}
+h3
+{
+	font-size: 1.2em;
+}
+h4
+{
+	font-size: 1.1em;
+}
+h5, h6
+{
+	font-size: 1em;
+}
+
+/* this rule styles <h2> tags that are the 
+first child of the left and right table columns */
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+{
+	margin-top: 0;
+}
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+/* you can specify a greater or lesser percentage for the 
+page width. Or, you can specify an exact pixel width. */
+.page
+{
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#header
+{
+	position: relative;
+	margin-bottom: 7px;
+	margin-top:25px;
+	color: #ffffff;
+	padding: 0;
+}
+
+#header h1
+{
+	font-weight: bold;
+	padding: 5px 0;
+	margin: 0;
+	color: #fff;
+	border: none;
+	line-height: 2em;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 32px !important;
+}
+
+#main
+{
+	padding: 30px 30px 15px 30px;
+	background-color: #fff;
+	margin-bottom: 30px;
+	_height: 1px; /* only IE6 applies CSS properties starting with an underscrore */
+}
+
+#footer
+{
+	color: #999;
+	padding:25px,0px,0px,0px;
+	text-align: center;
+	line-height: normal;
+	margin: 3;
+	font-size: .9em;
+}
+
+/* TAB MENU   
+----------------------------------------------------------*/
+ul#menu
+{
+	border-bottom: 1px ##006E2E solid;
+	padding: 0 0 2px;
+	position: relative;
+	margin: 0;
+	text-align: right;
+}
+
+ul#menu li
+{
+	display: inline;
+	list-style: none;
+}
+
+ul#menu li#greeting
+{
+	padding: 10px 20px;
+	font-weight: bold;
+	text-decoration: none;
+	line-height: 2.8em;
+	color: #fff;
+}
+
+ul#menu li a
+{
+	padding: 10px 20px;
+	font-weight: bold;
+	text-decoration: none;
+	line-height: 2.8em;
+	background-color: #e8eef4;
+	color:#ffffff;
+}
+
+ul#menu li a:hover
+{
+	background-color: #fff;
+	text-decoration: none;
+}
+
+ul#menu li a:active
+{
+	background-color: #a6e2a6;
+	text-decoration: none;
+}
+
+ul#menu li.selected a
+{
+	background-color: #fff;
+	color: #000;
+}
+
+/* FORM LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset 
+{
+	margin: 1em 0;
+	padding: 1em;
+	border: 1px solid #CCC;
+}
+
+fieldset p 
+{
+	margin: 2px 12px 10px 10px;
+}
+
+fieldset label 
+{
+	display: block;
+}
+
+fieldset label.inline 
+{
+	display: inline;
+}
+
+legend 
+{
+	font-size: 1.1em;
+	font-weight: 600;
+	padding: 2px 4px 8px 4px;
+}
+
+input[type="text"] 
+{
+	width: 200px;
+	border: 1px solid #CCC;
+}
+
+input[type="password"] 
+{
+	width: 200px;
+	border: 1px solid #CCC;
+}
+
+/* TABLE
+----------------------------------------------------------*/
+
+table 
+{
+  border: solid 1px #e8eef4;
+  border-collapse: collapse;
+}
+
+table td 
+{
+  padding: 5px;   
+  border: solid 1px #e8eef4;
+}
+
+table th
+{
+  padding: 6px 5px;
+  text-align: left;
+  background-color: #e8eef4; 
+  border: solid 1px #e8eef4;   
+}
+.plaintable
+{
+    padding: 6px 5px;
+  text-align: left;
+  background-color: #ffffff; 
+  border: solid 1px #000000;     
+    
+    
+    }
+
+/* MISC  
+----------------------------------------------------------*/
+.clear
+{
+	clear: both;
+}
+
+.error
+{
+	color:Red;
+}
+.headertitle
+{
+	font-weight: bold;
+	text-decoration: none;
+	line-height: 4.0em;
+	position:relative;
+	margin-bottom: 7px;
+	margin-top:25px;
+	color:Green;
+	padding: 0;   
+}
+
+.pageheaders
+{
+
+	background-color:#DCDCDC;
+	font-weight: bold;
+	text-decoration: none;
+	text-indent :5px;
+	height:30px;
+	line-height: 2.5em;
+	width:100%;
+	position:relative;
+	float:left;
+	color:#006400;
+	padding:10px,0px,10px,0px;
+	margin-left: auto;
+	margin-right: auto;
+  
+}
+
+
+
+
+#menucontainer
+{
+	margin-top:40px;
+}
+
+div#title
+{
+	display:block;
+	float:left;
+	text-align:left;
+}
+
+#logindisplay
+{
+	font-size:1.1em;
+	display:block;
+	text-align:right;
+	margin:10px;
+	color:White;
+}
+
+#logindisplay a:link
+{
+	color: white;
+	text-decoration: underline;
+}
+
+#logindisplay a:visited
+{
+	color: white;
+	text-decoration: underline;
+}
+
+#logindisplay a:hover
+{
+	color: white;
+	text-decoration: none;
+}
+
+.field-validation-error
+{
+	color: #ff0000;
+}
+
+.input-validation-error
+{
+	border: 1px solid #ff0000;
+	background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+	font-weight: bold;
+	color: #ff0000;
+}
+
+.Wrapper{
+	min-height:100%;
+	background-color:#ffffff;
+
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.ideallogo
+{
+	padding:5px; 
+	position:relative;
+	float:left;   
+}
+
+.export-pdf
+{
+	position:relative;
+	float:right;
+	font-size:85%;
+	font-weight:bold;
+	padding:5px;
+	color:Black;
+	z-index:10;
+}
+
+
+.userinfo
+{
+	position:relative;
+	float:right;
+	font-size:85%;
+	font-weight:bold;
+	top:50px;
+	padding:5px;
+	color:Green;
+}
+.userwarning
+{
+	
+
+	text-align:left;
+
+	font-weight:bold;
+	padding:5px;
+	color:Red;
+}
+
+.usermessage
+{
+	position:relative;
+	float:right;
+	font-size:85%;
+	font-weight:bold;
+	padding:5px;
+	color:Green;
+}
+
+/*------------------------------------------standard-table------------*/
+
+
+
+.standard-table{
+    width:100%;
+}
+/*
+.standard-table .small-header{
+    font-size:10px;
+    text-align:center;
+}
+*/
+.standard-table .alternate-row{
+    background-color:#EDEEF7; /* very light gray */
+}
+
+.standard-table td{
+    vertical-align:top;
+    padding: 4px;
+}
+
+.standard-table .label-column{
+    text-align:right;
+    width:40%;
+}
+
+.standard-table .data-column{
+    /*font-weight:bold;*/
+    width:60%;
+}
+
+/*-----------------------------------------------------------------------------------------------------*/
+.clean-table{
+    width:100%;/*95%;*/
+    margin-bottom:8px;
+}
+
+.clean-table .edit-button-column{
+    text-align:right;
+}
+
+.clean-table td
+,.clean-table th{
+    border-bottom:dotted 1px #37456C;/* dark blue */
+    padding:3px;
+}
+
+.clean-table th{
+    font-weight:bold;
+    text-align:left;
+    font-size:12px;
+}
+
+.clean-table .action-column{
+    text-align:right;
+     background-color:#EDEEF7; /* very light gray */
+}
+
+
+.clean-table .header {
+    background: url(../Content/images/table-sorter/bg.gif) no-repeat 95% 50%;
+    padding-right:25px;
+     background-color:#EDEEF7; /* very light gray */
+}
+
+.clean-table .headerSortUp{
+    background: url(../Content/images/table-sorter/asc.gif) no-repeat 95% 50%;
+    background-color:#EDEEF7; /* very light gray */
+}
+
+.clean-table .headerSortDown{
+    background: url(../Content/images/table-sorter/desc.gif) no-repeat 95% 50%;
+    background-color:#EDEEF7; /* very light gray */
+}
+/*-----------------------------------------------------------------------------------------------------------------
+----------------------------------Menu Bar-------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------*/
+
+#MenuBar{
+	background-color:Fuchsia; /* light gray */
+	text-align:center;
+	border-bottom:solid 2px Green;
+	height:1.6em;
+	margin:0;
+	padding:0;
+}
+
+#MenuBar > span{
+	display:inline-block;
+	margin:0;
+	padding:0;
+}
+
+
+.menu
+,.menu *{
+	display:block;
+	margin:0;
+	padding:0;
+	cursor:pointer;
+	color:#ff8C00; /* very light gray */
+ 
+}
+
+.menu a{
+	text-decoration:none;
+	color:white;
+	width:100%;
+}
+
+.menu ul{
+	list-style:none;
+	background-color:Transparent;
+}
+
+.menu li{
+	border:solid 1px gray;
+	float:left;
+	width:180px;
+	background-color:#ff8C00; /* dark grey */
+	margin-bottom: -1px;
+	margin-left: -1px;
+	text-align:center;
+	
+}
+
+/*-----------------------------------------------------------------------------------------------------------------
+----------------------------------jquery ui-----------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------*/
+
+
+/*-----------------------------------------------------------------------------------------------------------------
+----------------------------------Awesome dropdown menu-----------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------*/
+
+.hidden { position:absolute; top:0; left:-9999px; width:1px; height:1px; overflow:hidden; }
+
+.fg-button { 
+	/*clear:left;
+    font-size: .9em;
+	zoom: 1;  */
+	margin:0 1px 0 1px; 
+	padding: 0 1em; 
+	text-decoration:none !important; 
+	color:#ffffff;
+	background-color:Orange;
+	cursor:pointer; 
+	position: relative;
+    top:-18px;
+	text-align: center;
+}
+	
+.fg-button .ui-icon { 
+	position: absolute; 
+	top: 50%; 
+	margin-top: -8px; 
+	left: 50%; 
+	margin-left: -8px; 
+}
+
+a.fg-button { float:left;  }
+
+button.fg-button { 
+	width:auto; 
+	overflow:visible; } /* removes extra button width in IE */
+
+.fg-menu-container{
+	font-size:90%;
+}
+
+.fg-button-icon-left { padding-left: 2.1em; }
+.fg-button-icon-right { padding-right: 2.1em; }
+.fg-button-icon-left .ui-icon { right: auto; left: .2em; margin-left: 0; }
+.fg-button-icon-right .ui-icon { left: auto; right: .2em; margin-left: 0; }
+.fg-button-icon-solo { display:block; width:8px; text-indent: -9999px; }	 /* solo icon buttons must have block properties for the text-indent to work */	
+.fg-button.ui-state-loading .ui-icon { background: url(http://tn-sqldevel:9777/content/images/spinner_bar.gif) no-repeat 0 0; }
+
+
+
+.ui-tabs .ui-tabs-panel {
+	padding: 0px;
+}
+
+#ui-datepicker-div{
+   display:none;
+}
+
+
+
+
+
+    /*----------------------------------------------------------*/
+
+.menu > li{ /* top level list items */
+    border-top-width:0;
+    border-bottom-width:0;
+    
+}
+
+.menu li > ul
+,.menu li > ul > li{
+    display:none;
+}
+
+.menu  li:hover > ul
+,.menu li:hover > ul > li{
+    display:block;
+}
+
+.menu li > ul > li {
+    position: relative;
+    text-align:left;
+}
+
+.menu li > ul > li span
+,.menu li > ul > li a{
+    padding-left:3px;
+}
+
+.menu li > ul > li  ul{
+    /*ul that opens to the right*/
+    position: absolute;
+    top:2px; /*Open li slightly lower than its parent*/                
+    left: 181px;
+}
+
+.menu li > ul > li > ul > li{
+    /*li in a ul that opens to the right*/
+} 
+
+/*Notes*/
+
+.notes 
+{
+ width: 250em;
+ } 
+
+
+/*----------------------------------------------------------------------------Notify------------------------------*/
+
+#NotificationContainer{
+    margin:0;
+    padding:0;
+    width:100%;
+    background:000000;
+    font-size:18px;
+    display:inline;
+   
+}
+
+.notification{
+    margin-bottom:8px;
+    font-weight:bold;
+    display: inline-block;
+    background: 000000;
+    width:100%;
+    text-align:center;
+    border-bottom:solid 1px gray;
+    position: relative;
+	top: -22px;
+}
+
+.notification-close{
+    border: 2px solid white;
+    cursor: pointer;
+    display: block;
+    float: right;
+    height: 16px;
+    line-height: 13px;
+    margin-right: 20px;
+    margin-top: 2px;
+    overflow: hidden;
+    padding: 0px 4px;
+    
+}
+/*right and left alignment*/
+
+
+.container {
+   position: relative;
+   height: 50px;
+   }
+
+.left-element {
+   position: absolute;
+   left: 0;
+   width: 50%;
+   }
+
+.right-element {
+   position: absolute;
+   right: 0;
+   width: 50%;
+   text-align: right; /* depends on element width */
+   } 
+
+
+/* LOADING animation */
+
+.hidden { visibility: hidden; }
+ .unhidden { visibility: visible; }

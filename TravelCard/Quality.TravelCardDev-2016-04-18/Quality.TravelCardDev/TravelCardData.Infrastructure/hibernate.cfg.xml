@@ -1,0 +1,13 @@
+﻿<hibernate-configuration xmlns="urn:nhibernate-configuration-2.2">
+  <session-factory>
+    <property name="connection.driver_class">NHibernate.Driver.SqlClientDriver</property>
+    <property name="connection.connection_string">Data Source=ideal/tn-sqldevel;Initial Catalog=Quality_dev;User Id=TravelCardAppUser;Password=TCApp4U;Integrated Security=true;</property>
+    <property name="show_sql">true</property>
+    <property name="dialect">NHibernate.Dialect.MsSql2008Dialect</property>
+    <property name="cache.use_query_cache">false</property>
+    <property name="adonet.batch_size">100</property>
+    <property name="proxyfactory.factory_class">NHibernate.ByteCode.Castle.ProxyFactoryFactory, NHibernate.ByteCode.Castle</property>
+    <mapping assembly="TravelCardData.Infrastructure" />
+  </session-factory>
+</hibernate-configuration>
+
