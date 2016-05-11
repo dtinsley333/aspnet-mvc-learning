@@ -1,0 +1,14 @@
+﻿@using ChinookMusic.ViewModels;
+@model List<CanadianCustomerViewModel>
+@{
+    ViewBag.Title = "CanadianCustomers";
+}
+
+<h2>Canadian Customers</h2>
+<ul>
+    @foreach (var cust in Model)
+    {
+        <li>@cust.FirstName &nbsp;&nbsp;  @cust.LastName</li>
+    }
+</ul>
+
