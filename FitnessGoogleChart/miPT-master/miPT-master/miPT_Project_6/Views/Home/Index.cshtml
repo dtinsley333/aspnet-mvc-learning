@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>miPT</h1>
+    <p class="lead">miPT is a Personal Training tool for both Trainers and Clients</p>
+    <p>@Html.ActionLink("Learn More", "About", new { @class = "btn btn-info" })</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Admin</h2>
+        <p>
+            Manage trainers and clients.
+        </p>
+        <p>@Html.ActionLink("Click Here to Enter »", "Index", "AspNetUsers", null, new { @class = "btn btn-info" })</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Trainer</h2>
+        <p>Manage your clients, update their upcoming workouts and measurement history</p>
+        <p>@Html.ActionLink("Click Here to Enter »", "MyClients", "ClientDetails", null, new { @class = "btn btn-info" })</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Client</h2>
+        <p>View your measurement progress, and see upcoming workouts</p>
+        <p>@Html.ActionLink("Click Here to Enter »", "Summary", "ClientDetails", null, new { @class = "btn btn-info" })</p>
+    </div>
+</div>

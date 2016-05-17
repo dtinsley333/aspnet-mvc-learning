@@ -1,0 +1,117 @@
+﻿@model IEnumerable<miPT_Project_6.Models.Measurements>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Return to Client List", "Index", "ClientDetails")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BodyWeight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BodyFat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BMR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MetabolicAge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Water)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Visceral)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BoneMass)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LeanMass)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhysiqueRating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Chest)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Waist)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hips)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Abdomen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClientDetails.Id)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BodyWeight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BodyFat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BMR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MetabolicAge)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Water)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Visceral)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BoneMass)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LeanMass)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhysiqueRating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Chest)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Waist)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hips)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Abdomen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClientDetails.Id)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MeasurementID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MeasurementID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MeasurementID })
+        </td>
+    </tr>
+}
+
+</table>

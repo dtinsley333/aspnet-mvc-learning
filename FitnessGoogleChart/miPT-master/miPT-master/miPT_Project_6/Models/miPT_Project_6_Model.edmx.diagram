@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1ba3b04522a94bfc8b4d0edaaf234246" Name="Diagram1">
+        <EntityTypeShape EntityType="miPt_ProjectModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="miPt_ProjectModel.AspNetRoles" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="miPt_ProjectModel.AspNetUserClaims" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="miPt_ProjectModel.AspNetUserLogins" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="miPt_ProjectModel.AspNetUserRoles" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="miPt_ProjectModel.AspNetUsers" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="miPt_ProjectModel.ClientDetails" Width="1.5" PointX="5.25" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="miPt_ProjectModel.Measurements" Width="1.5" PointX="7.5" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="miPt_ProjectModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="miPt_ProjectModel.Trainers" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="miPt_ProjectModel.UserWorkouts" Width="1.5" PointX="6" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="miPt_ProjectModel.Workouts" Width="1.5" PointX="3.75" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="miPt_ProjectModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="miPt_ProjectModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="miPt_ProjectModel.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="miPt_ProjectModel.FK_Trainers_Trainers" ManuallyRouted="false" />
+        <AssociationConnector Association="miPt_ProjectModel.FK_UserDetails_AspNetUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="miPt_ProjectModel.FK_UserWorkouts_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="miPt_ProjectModel.FK_ClientDetails_Trainers" ManuallyRouted="false" />
+        <AssociationConnector Association="miPt_ProjectModel.FK_Measurements_ClientDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="miPt_ProjectModel.FK_UserWorkouts_Workouts" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

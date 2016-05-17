@@ -1,0 +1,45 @@
+﻿@model IEnumerable<miPT_Project_6.Models.Workouts>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.WorkoutName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YouTubeLink)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkoutName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YouTubeLink)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.WorkoutID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.WorkoutID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.WorkoutID })
+        </td>
+    </tr>
+}
+
+</table>

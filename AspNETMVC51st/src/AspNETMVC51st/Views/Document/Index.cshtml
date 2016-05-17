@@ -1,0 +1,68 @@
+@model AspNETMVC51st.ViewModels.DocumentDetailsViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>File Uploads</h2>
+@using (Html.BeginForm("Index", "Document", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+<label for="file">File Upload:</label><br />
+@Html.Label("File Name:   ")@Html.TextBoxFor(model => model.Title)
+<input type="file" name="file" id="file" /><br><br>
+<input type="submit" value="Upload File" />
+<br><br>
+@ViewBag.Message
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <tr>
+        
+        <th>
+            @Html.Label("File Name")
+        </th>
+        <th>
+            @Html.Label("Title")
+        </th>
+        <th>
+            @Html.Label("File Type")
+        </th>
+        <th>
+            @Html.Label("Update Date")
+        </th>
+        <th>
+            @Html.Label("User ID")
+        </th>
+        <th></th>
+    </tr>
+    
+@foreach (var item in Model.Documents)
+{
+    <tr>
+       
+        <td>
+            @Html.ActionLink(item.Title, "FileDownLoad", "Document", new { @documentId = item.DocumentId }, null)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContentType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UploadDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UploadUserId)
+        </td>
+        <td>
+            <a asp-action="Edit" asp-route-id="@item.DocumentId">Edit</a> |
+            <a asp-action="Details" asp-route-id="@item.DocumentId">Details</a> |
+            <a asp-action="Delete" asp-route-id="@item.DocumentId">Delete</a>
+        </td>
+    </tr>
+}
+</table>
+}

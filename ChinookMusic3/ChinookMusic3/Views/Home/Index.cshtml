@@ -1,0 +1,17 @@
+﻿@using ChinookMusic3.Models
+@model List<Customer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>List of Customers</h2>
+<ul>
+@foreach (var cust in Model)
+{
+    <li>@cust.FirstName</li>
+}
+
+
+</ul>
+

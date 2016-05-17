@@ -1,0 +1,144 @@
+﻿@model miPT_Project_6.Models.Measurements
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Measurements</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BodyWeight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BodyWeight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BodyFat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BodyFat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BMR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BMR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MetabolicAge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetabolicAge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Water)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Water)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Visceral)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Visceral)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoneMass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoneMass)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeanMass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeanMass)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhysiqueRating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhysiqueRating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chest)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chest)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Waist)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Waist)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hips)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hips)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Abdomen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Abdomen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientDetails.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientDetails.Id)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

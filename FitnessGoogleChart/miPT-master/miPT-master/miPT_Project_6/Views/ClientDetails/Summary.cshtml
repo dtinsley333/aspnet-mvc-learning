@@ -1,0 +1,92 @@
+﻿@model miPT_Project_6.Models.Measurements
+
+@{
+    ViewBag.Title = "Summary";
+}
+
+<h2>Your Dashboard.</h2>
+<div>
+    <h3>Welcome, @ViewBag.UserFirstName</h3>
+    <p>Here is your overall summary.</p>
+</div>
+<div>
+    <h3>Your trainer name is: @ViewBag.TrainerName</h3>
+</div>
+<br />
+<br />
+<div>
+    <h3>Your recent measurements.</h3>
+</div>
+<div class="row">
+    <div class="col-md-4" >
+        <h4>Weight:</h4>
+        <p>Your last weight: @ViewBag.CurrentWeight kg</p>
+        <p>Your starting weight: @ViewBag.OriginalWeight kg</p>
+        <p>Total weight change: @ViewBag.WeightChange kg</p>
+        <div id="weight_chart" style="width: 100%; height: 300px;"></div>
+    </div>
+    <div class="col-md-4">
+        <h4>Bodyfat Percentage:</h4>
+        <p>Your latest percentage: @ViewBag.CurrentBodyFat %</p>
+        <p>Your starting percentage: @ViewBag.OriginalBodyFat %</p>
+        <p>Total percentage change: @ViewBag.FatChange %</p>
+        <div id="bodyfat_chart" style="width: 100%; height: 300px;"></div> 
+    </div>
+    <div class="col-md-4">
+    <h4>Metabolic Age:</h4>
+    <p>Your latest age: @ViewBag.CurrentAge</p>
+    <p>Your starting age: @ViewBag.OriginalAge</p>
+    <p>Total change in metabolic age: @ViewBag.AgeChange years</p>
+    <div id="metage_chart" style="width: 100%; height: 300px;"></div>
+    </div>
+</div>
+<br />
+<br />
+<div>
+    <h3>Your next workout.</h3>
+</div>
+<p>Your next workout is <span style="font-weight:Bold;">@ViewBag.NextWorkoutName</span> on <span style="font-weight:Bold;">@ViewBag.NextWorkoutDate.ToShortDateString()</span></p>
+
+
+
+<script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+          var weightData = google.visualization.arrayToDataTable(@ViewBag.WeightData);
+          var bodyFatData = google.visualization.arrayToDataTable(@ViewBag.BodyFatData);
+          var metAgeData = google.visualization.arrayToDataTable(@ViewBag.MetAgeData);
+
+
+          var weightOptions = {
+              chartArea: { left: '10%' },
+          title: 'Weight',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+          };
+
+          var bodyFatOptions = {
+              chartArea: { left: '10%' },
+              title: 'BodyFat',
+              curveType: 'function',
+              legend: { position: 'bottom' }
+          };
+
+          var metAgeOptions = {
+              chartArea: { left: '10%' },
+              title: 'Metabolic Age',
+              curveType: 'function',
+              legend: { position: 'bottom' }
+          };
+
+          var weightChart = new google.visualization.LineChart(document.getElementById('weight_chart'));
+          var bodyFatChart = new google.visualization.LineChart(document.getElementById('bodyfat_chart'));
+          var metAgeChart = new google.visualization.LineChart(document.getElementById('metage_chart'));
+
+
+          weightChart.draw(weightData, weightOptions);
+          bodyFatChart.draw(bodyFatData, bodyFatOptions);
+          metAgeChart.draw(metAgeData, metAgeOptions);
+      }
+</script>
